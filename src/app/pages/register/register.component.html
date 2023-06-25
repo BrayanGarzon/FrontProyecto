@@ -1,0 +1,65 @@
+<section id="subscribe_section" class="subscribe section">
+    <div class="subscribe__bg">
+        <div class="subscribe__container container">
+            <h2 class="section__title subscribe__title">Registrate aqui!</h2>
+
+            <form id="formulario" (ngSubmit)="saveRegister()" [formGroup]="formRegister" class="subscribe__form"
+                method="POST">
+
+                <input type="text" placeholder="Nombres" formControlName="name" class="subscribe__input" name="name"
+                    id="name" required>
+                <small
+                    *ngIf="formRegister.controls['name'].errors?.['required'] && formRegister.controls['name'].touched"
+                    class="p-error block" style="color: red;">name is required.</small>
+                <hr class="hr">
+
+                <input type="email" formControlName="email" placeholder="Correo" class="subscribe__input" name="email"
+                    id="email" required>
+                <small
+                    *ngIf="formRegister.controls['email'].errors?.['required'] && formRegister.controls['email'].touched"
+                    class="p-error block" style="color: red;">email is required.</small>
+                <hr class="hr">
+
+                <input type="file" class="subscribe__input" name="avatar" (change)="onFileSelected($event)"
+                    id="avatar" accept="image/png, image/gif, image/jpeg" required>
+                <hr class="hr">
+
+                <input type="number" formControlName="phone" placeholder="Phone" class="subscribe__input" name="phone"
+                    id="phone" required>
+                <small
+                    *ngIf="formRegister.controls['phone'].errors?.['required'] && formRegister.controls['phone'].touched"
+                    class="p-error block" style="color: red;">phone is required.</small>
+                <hr class="hr">
+
+                <input type="text" formControlName="nationality" placeholder="Nationality" class="subscribe__input" name="nationality"
+                    id="nationality" required>
+                <small
+                    *ngIf="formRegister.controls['nationality'].errors?.['required'] && formRegister.controls['nationality'].touched"
+                    class="p-error block" style="color: red;">nationality is required.</small>
+                <hr class="hr">
+
+                <select type="text" formControlName="gender" class="subscribe__input" name="gender"
+                    id="gender" required>
+                    <option *ngFor="let gender of genders" [value]="gender.value">{{ gender.label }}</option>
+                </select>
+                <small
+                    *ngIf="formRegister.controls['gender'].errors?.['required'] && formRegister.controls['gender'].touched"
+                    class="p-error block" style="color: red;">gender is required.</small>
+                <hr class="hr">
+
+                <input type="password" formControlName="password" name="password" placeholder="password"
+                    class="subscribe__input" required>
+                <small
+                    *ngIf="formRegister.controls['password'].errors?.['required'] && formRegister.controls['password'].touched"
+                    class="p-error block" style="color: red;">password is required.</small>
+                <hr class="hr">
+                <br>
+
+
+                <div class="container-button-enviar">
+                    <button class="button" type="submit">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

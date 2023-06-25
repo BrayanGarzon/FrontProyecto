@@ -1,0 +1,34 @@
+<section class="place section" style="padding: 1rem 0 2rem;" id="place">
+    <h2 class="section__title" *ngIf="category">{{ category.name }}</h2>
+    <div
+        style="width: 35%; margin: 0 auto; display: flex; align-items: center; justify-content: center; ">
+        
+        <input type="text" placeholder="Buscar por nombre del sitio" class="subscribe__input" [(ngModel)]="filtro" (keyup)="filter()">
+    </div>
+
+    <div class="place__container container grid">
+        <!--==================== PLACES CARD 1 ====================-->
+        <div class="place__card" *ngFor="let site of sites">
+            <img src="{{ site.image }}" alt="" class="place__img">
+
+            <div class="place__content">
+                <span class="place__rating">
+                    <i *ngFor="let item of getNumberRange(site.quality)" class="ri-star-line place__rating-icon"></i>
+                </span>
+
+                <div class="place__data">
+                    <a [routerLink]="['/discover/comments/show/', site.id]">
+                        <h3 class="place__title">{{ site.name }}</h3>
+                    </a>
+                    <span class="place__subtitle">{{ site.location }}</span>
+                    <span class="place__price">{{ site.price | currency }}</span>
+                </div>
+            </div>
+            <a [routerLink]="['/discover/comments/show/', site.id]">
+                <button class="button button--flex place__button">
+                    <i class="ri-chat-forward-line"></i>
+                </button>
+            </a>
+        </div>
+    </div>
+</section>

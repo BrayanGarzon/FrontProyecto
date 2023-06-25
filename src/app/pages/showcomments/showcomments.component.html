@@ -1,0 +1,64 @@
+<div *ngIf="site">
+    <div
+        style="width: auto; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-top: 120px;">
+        <h1>Categoria: {{ site.category.name }}</h1>
+    </div>
+    <div
+        style="width: auto; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-top: 20px;">
+        <h2>{{ site.name }}</h2>
+
+    </div>
+
+    <div class="container">
+        <div class="image">
+            <div class="place__container container grid">
+                <!--==================== PLACES CARD 1 ====================-->
+                <div class="place__card" *ngFor="let image of site.site_images">
+                    <img src="{{ image.image }}" alt="" class="place__img">
+                </div>
+            </div>
+        </div>
+        <div class="text">
+            <h4>{{ site.description }}</h4>
+            <ul style="margin-top: 7em;">
+                <li>
+                    <h2><strong>Precio:</strong> {{ site.price == 0 ? 'ingreso gratuito' : site.price | currency }}</h2>
+                </li>
+                <li>
+                    <h2><strong>Calificacion:</strong> {{ site.quality | number }}</h2>
+                </li>
+                <li>
+                    <h2><strong>Dirección:</strong> {{ site.address }}</h2>
+                </li>
+            </ul>
+            <div class="social-section">
+                <a href="#" class="social-icon" *ngFor="let social of site.social_networks">
+                    <i [ngClass]="getClass(social.type_social_network)"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="width: 50%; margin: 0 auto; align-items: center; justify-content: center; margin-top: 30px;"
+    *ngFor="let comment of comments">
+
+    <div class="avatar">
+        <img src="{{ comment.user?.avatar }}" alt="Avatar">
+    </div>
+    <div class="chat-card">
+        <div class="chat-content">
+            <h4>Usuario: {{ comment.user?.fake_name || 'Usuario desconocido' }}</h4>
+            <p>Mensaje: {{ comment.name }}</p>
+            <p>Puntuacion: {{ comment.quality | number:'.1' }}</p>
+            <small>created at: {{ comment.created_at | date:"Y-m-d hh:mm a"}}</small>
+        </div>
+    </div>
+</div>
+
+<div style="width: 60%; display: block; margin: 0 auto; align-items: center; justify-content: center; margin-top: 30px;"
+    *ngIf="site">
+
+    <a [routerLink]="['/discover/comment/sites/', site.id]" class="button" style="width: 100%; text-align: center;">Haz
+        un comentario</a>
+</div>
