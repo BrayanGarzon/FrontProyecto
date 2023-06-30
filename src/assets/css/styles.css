@@ -22,6 +22,7 @@
   --white-color: #FFF;
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 75%);
+  --bg-input-color: rgb(230, 230, 230);
 
 
   --color-home-isla: rgb(20, 80, 92, 0.5);
@@ -651,6 +652,17 @@ input {
   margin-top: 8px;
   
 }
+
+.subscribe__input_lupa{
+  width: 100%;
+  height: 40px;
+  padding-right: .5rem;
+  background-color: var(--bg-input-color);
+  color: var(--text-color);
+  margin-top: 8px;
+  
+}
+
 .hr{
   color: var(--text-color);
   margin-top: 10px;

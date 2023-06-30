@@ -6,12 +6,15 @@
         <h1>{{ site.category.name }}</h1>
     </div>
     -->
-    <br><br><br>
+    <br><br><br><br>
     <div
-        style="width: auto; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-top: 20px;">
+        style="width: auto; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-top: 20px; font-size: 30px;">
         <h2>{{ site.name }}</h2>
 
     </div>
+
+    <br><br>
+    <hr style="max-width: 1024px; background-color: #14505C; margin: auto;"> <!--linea-->
 
     <div class="container">
         <div class="image">
@@ -22,27 +25,40 @@
                 </div>
             </div>
         </div>
-        <div class="text" style="text-align: justify;">
+        <div class="text" style="text-align: justify; margin-top: 4em;">
             <h4>{{ site.description }}</h4>
-            <ul style="margin-top: 7em; text-align: center;">
+            <ul style="margin-top: 2em;">
                 <li>
-                    <h2><strong><!--Precio:--></strong> {{ site.price == 0 ? 'ingreso gratuito' : site.price | currency }}</h2>
+                    <h2 style="font-size: 15px;"><strong style="font-size: 18px; text-align: left; padding-right: 45px">Precio:</strong> {{ site.price == 0 ? 'ingreso gratuito' : site.price | currency }}</h2>
                 </li>
                 <li>
-                    <h2><strong><!--Calificacion:--></strong> {{ site.quality | number }}</h2>
+                    <h2 style="font-size: 15px;"><strong style="font-size: 18px; text-align: left;">Calificacion:</strong> {{ site.quality | number }}</h2>
                 </li>
                 <li>
-                    <h2><strong>Dirección:</strong> {{ site.address }}</h2>
+                    <h2 style="font-size: 15px;"><strong style="font-size: 18px; text-align: left;  padding-right: 19px;">Dirección:</strong> {{ site.address }}</h2>
                 </li>
             </ul>
+
+
             <div class="social-section">
-                <a href="#" class="social-icon" *ngFor="let social of site.social_networks">
+                <h2 style="font-size: 15px; text-align: left;"><strong style="font-size: 18px; text-align: left;  padding-right: 19px;">Redes Sociales:</strong>
+                    <a href="{{ social.link }}" class="social-icon" *ngFor="let social of site.social_networks"  target="_blank">
                     <i [ngClass]="getClass(social.type_social_network)"></i>
-                </a>
+                    </a>
+                </h2>
+                
+                
             </div>
         </div>
     </div>
 </div>
+
+
+<br><br>
+<hr style="max-width: 1024px; background-color: #14505C; margin: auto;"> <!--linea-->
+<h3 style="font-size: 30px; width: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-top: 30px;">Comentarios</h3>
+<br><br>
+
 
 <div style="width: 50%; margin: 0 auto; align-items: center; justify-content: center; margin-top: 30px;"
     *ngFor="let comment of comments">
