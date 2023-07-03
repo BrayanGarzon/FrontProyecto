@@ -23,8 +23,8 @@ export class RegisterComponent {
   })
 
   genders: { value: string, label: string }[] = [
-    {value: "M", label: "Male"},
-    {value: "F", label: "Female"},
+    {value: "M", label: "Masculino"},
+    {value: "F", label: "Femenino"},
   ];
 
   selectedFile!: File;

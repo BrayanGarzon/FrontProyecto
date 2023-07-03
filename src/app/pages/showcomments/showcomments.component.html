@@ -29,10 +29,12 @@
             <h4>{{ site.description }}</h4>
             <ul style="margin-top: 2em;">
                 <li>
-                    <h2 style="font-size: 15px;"><strong style="font-size: 18px; text-align: left; padding-right: 45px">Precio:</strong> {{ site.price == 0 ? 'ingreso gratuito' : site.price | currency }}</h2>
+                    <h2 style="font-size: 15px;"><strong style="font-size: 18px; text-align: left; padding-right: 46px">Precio:</strong> {{ site.price == 0 ? 'ingreso gratuito' : site.price | currency }}</h2>
                 </li>
                 <li>
                     <h2 style="font-size: 15px;"><strong style="font-size: 18px; text-align: left;">Calificacion:</strong> {{ site.quality | number }}</h2>
+                    
+                       
                 </li>
                 <li>
                     <h2 style="font-size: 15px;"><strong style="font-size: 18px; text-align: left;  padding-right: 19px;">Dirección:</strong> {{ site.address }}</h2>
@@ -41,7 +43,7 @@
 
 
             <div class="social-section">
-                <h2 style="font-size: 15px; text-align: left;"><strong style="font-size: 18px; text-align: left;  padding-right: 19px;">Redes Sociales:</strong>
+                <h2 style="font-size: 15px; text-align: left;"><strong style="font-size: 18px; text-align: left;  padding-right: 40px;">Redes:</strong>
                     <a href="{{ social.link }}" class="social-icon" *ngFor="let social of site.social_networks"  target="_blank">
                     <i [ngClass]="getClass(social.type_social_network)"></i>
                     </a>

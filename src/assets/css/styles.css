@@ -653,6 +653,9 @@ input {
   
 }
 
+
+
+
 .subscribe__input_lupa{
   width: 100%;
   height: 40px;
@@ -679,7 +682,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: -10px;
 }
 
 /*=================EDIT FORM CAMPS================*/
@@ -956,8 +959,16 @@ textarea::placeholder{
 
 
 
-
-
+.avatar_register{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7px;
+}
+.avatar_register .imagen_avatar{
+  width: 100px;
+  height: 100px;
+}
 
 
 
