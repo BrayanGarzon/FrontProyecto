@@ -1,11 +1,5 @@
 <div *ngIf="site">
     
-    <!--
-    <div
-        style="width: auto; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-top: 120px;">
-        <h1>{{ site.category.name }}</h1>
-    </div>
-    -->
     <br><br><br><br>
     <div
         style="width: auto; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-top: 20px; font-size: 30px;">
@@ -29,10 +23,12 @@
             <h4>{{ site.description }}</h4>
             <ul style="margin-top: 2em;">
                 <li>
-                    <h2 style="font-size: 15px;"><strong style="font-size: 18px; text-align: left; padding-right: 46px">Precio:</strong> {{ site.price == 0 ? 'ingreso gratuito' : site.price | currency }}</h2>
+                    <h2 style="font-size: 15px;"><strong style="font-size: 18px; text-align: left; padding-right: 46px">Precio:</strong> {{ site.price == 0 ? 'Ingreso gratuito' : site.price | currency }}</h2>
                 </li>
+
                 <li>
-                    <h2 style="font-size: 15px;"><strong style="font-size: 18px; text-align: left;">Calificacion:</strong> {{ site.quality | number }}</h2>
+                    <h2 style="font-size: 15px;"><strong style="font-size: 18px; text-align: left; padding-right: 5px;">Calificacion:</strong>  <i *ngFor="let item of getNumberRange(site.quality)" class="ri-star-line place__rating-icon"></i>
+                    </h2>
                     
                        
                 </li>
@@ -72,7 +68,7 @@
         <div class="chat-content">
             <h4><!--Usuario:--> {{ comment.user?.fake_name || 'Usuario desconocido' }}</h4>
             <p><!--Mensaje:--> {{ comment.name }}</p>
-            <p><!--Puntuacion:--> {{ comment.quality | number:'.1' }}</p>
+            <p><!--Puntuacion:--> <i *ngFor="let item of getNumberRange(comment.quality)" class="ri-star-line place__rating-icon"></i></p>
             <small><!--created at:--> {{ comment.created_at | date:"Y-m-d hh:mm a"}}</small>
         </div>
     </div>

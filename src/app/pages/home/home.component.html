@@ -1,17 +1,47 @@
+
+<br><br><br>
+
+
+<section style="display: flex; justify-content: center; align-items: center;">
+    <div class="seccion" style=" width: 1024px; display: flex;">
+        
+        <div class="texto" style="max-width: 50%;">
+            <h2 style="color: #11414B; margin-top: 10px;">Departamento Del Meta</h2>
+            <p style="color: #11414B; margin-top: 20px; text-align: justify;">
+                El Meta es un departamento de economía ganadera, agrícola y minera (destacándose la extracción de petróleo crudo y gas), cuya cultura local gira en torno a la hacienda y la vaquería. Entre los principales eventos, ferias y fiestas se destacan El Torneo Internacional del Joropo las Cuadrillas de San Martín y el Mundial del Coleo. El departamento ha sido por tradición un receptor de inmigrantes de otras regiones del país, factor que ha enriquecido su identidad cultural.
+                <a href="https://es.wikipedia.org/wiki/Meta_(Colombia)" style="text-decoration: none; color: #287E8F;" target="_blank"> 
+                    <strong> Más </strong>
+                </a>
+            </p>
+        </div>
+
+        <div class="imagen" style="max-width: 50%;">
+            <img src="../../../assets/img/About1.png" alt="" style="width: 250px; height: 300px; margin-left: 60%;">
+        </div>
+    </div>
+</section>
+
+<!--SECCION DE PAGINAS RECOMENDADAS-->
+<br><br><br>
+
+<h2 class="pagina_recomendada" style="display: flex; justify-content: center; align-items: center; font-size: 30px; margin-bottom: -93px;">Paginas Recomendadas</h2>
 <section class="about section" id="about">
     <div class="about__container container grid" style="margin-top: 2em;" *ngFor="let item of recommended">
         <div class="about__data">
             <h2 class="section__title about__title">{{ item.title }}</h2>
             <p class="about__description">
-                {{ item.content }}
+                {{ item.content }} <a href="{{ item.link }}" target="_blank"><strong style="color: #287e8f;">Visitar Sitio</strong></a>
             </p>
-            <a href="{{ item.link }}" class="button" target="_blank">Seguir leyendo</a>
+           <!--<a href="{{ item.link }}" class="button" target="_blank">Visitar</a>-->
             <br>
         </div>
 
         <div class="about__img">
             <div class="about__img-overlay">
-                <img src="{{ item.image }}" alt="" class="about__img-one">
+                <a href="{{ item.link }}" target="_blank">
+                    <img src="{{ item.image }}" alt="" class="about__img-one">
+                </a>
+                
             </div>
         </div>
     </div>

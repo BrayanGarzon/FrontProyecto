@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Helper } from 'src/app/helper/helper';
 import { Comment } from 'src/app/interfaces/discover/comment.interface';
 import { CommentsService } from 'src/app/services/discover/comments.service';
 import { SitesService } from 'src/app/services/discover/sites.service';
+
+
 
 @Component({
   selector: 'app-showcomments',
@@ -11,6 +14,7 @@ import { SitesService } from 'src/app/services/discover/sites.service';
   styleUrls: ['./showcomments.component.css']
 })
 export class ShowcommentsComponent {
+
   private siteId: string | null;
   site: any;
   comments: Comment[] = [];
@@ -78,12 +82,19 @@ export class ShowcommentsComponent {
         classes = "fa fa-youtube-play"
         break
       case "Redis":
-        classes = "fa fa-reddit-alien"
+        classes = "fa fa-whatsapp"
+        break
+      case "whatsApp":
+        classes = "fa fa-whatsapp"
         break
       default:
         classes = ""
         break;
     }
     return classes;
+  }
+
+  getNumberRange(end: any) {
+    return Helper.getNumberRange(1, end);
   }
 }

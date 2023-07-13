@@ -52,11 +52,10 @@
                 <hr class="hr">
 
 
-                <label style="margin-left: 5px;">
-                    Genero
-               </label>
+                
                 <select type="text" formControlName="gender" class="subscribe__input" name="gender"
-                    id="gender"  required style="border: 0.5 solid black; width: 120px; height: 25px;">
+                    id="gender"  required style="border: none; font-size: 16px; margin-left: -5px;">
+                    <option [ngValue]="null" [disabled]="true">Selecciona tu genero</option>
                     <option *ngFor="let gender of genders" [value]="gender.value" >{{ gender.label }}</option>
                 </select>
                 
@@ -75,7 +74,7 @@
 
 
                 <div class="container-button-enviar">
-                    <button class="button" type="submit">Register</button>
+                    <button class="button" type="submit">Registrarme</button>
                 </div>
             </form>
         </div>

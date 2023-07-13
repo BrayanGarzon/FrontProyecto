@@ -29,26 +29,26 @@
             <h2 class="section__title subscribe__title">Enviar comentarios de este sitio </h2>
 
             <form id="formulario" (ngSubmit)="sendComment()" [formGroup]="formComment" class="subscribe__form"
-                method="POST">
+                method="POST" >
 
                 <textarea name="message" id="message" class="form_input--message" cols="30" rows="10"
-                    placeholder="Escribe tu mensaje" required formControlName="message"></textarea>
+                    placeholder="Escribe tu mensaje" required formControlName="message" style="margin-top: 15px;"></textarea>
                 <small
                     *ngIf="formComment.controls['message'].errors?.['required'] && formComment.controls['message'].touched"
-                    class="p-error block" style="color: red;">message is required.</small>
+                    class="p-error block" style="color: red;">El mensaje es necesario.</small>
                 <hr class="hr">
 
-                <input type="number" formControlName="quality" name="quality" placeholder="quality"
+                <input type="number" formControlName="quality" name="quality" placeholder="Calificación"
                     class="subscribe__input" required>
                 <small
                     *ngIf="formComment.controls['quality'].errors?.['required'] && formComment.controls['quality'].touched"
-                    class="p-error block" style="color: red;">quality is required.</small>
+                    class="p-error block" style="color: red;">La calificación es necesaria</small>
                 <small
                     *ngIf="formComment.controls['quality'].errors?.['min'] && formComment.controls['quality'].touched"
-                    class="p-error block" style="color: red;">quality min is 0.</small>
+                    class="p-error block" style="color: red;">La calificación minima es 0.</small>
                 <small
                     *ngIf="formComment.controls['quality'].errors?.['max'] && formComment.controls['quality'].touched"
-                    class="p-error block" style="color: red;">quality max is 5.</small>
+                    class="p-error block" style="color: red;">La calificación maxima es 5.</small>
                 <hr class="hr">
                 <br>
 

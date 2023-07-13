@@ -1,3 +1,4 @@
+
 <section class="place section" id="place">
     <h2 class="section__title">lo mas atractivo</h2>
 
@@ -16,7 +17,7 @@
                         <h3 class="place__title">{{ site.name }}</h3>
                     </a>
                     <span class="place__subtitle">{{ site.location }}</span>
-                    <span class="place__price">{{ site.price }}</span>
+                    <span class="place__price" >{{ site.price | currency }}</span>
                 </div>
             </div>
             <a [routerLink]="['/discover/comments/show/', site.id]">

@@ -174,8 +174,13 @@ input {
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section {
-  padding: 4.5rem 0 2.5rem;
+  padding: 4.5rem 0 2.5rem;   
 }
+
+.footer_section{
+  background-color: #11414B;
+}
+
 
 .section__title {
   font-size: var(--h2-font-size);
@@ -759,6 +764,8 @@ textarea::placeholder{
   flex-direction: column;
   row-gap: 1.5rem;
   text-align: center;
+  margin-top: -25px;
+  margin-bottom: 20px;
 }
 
 .footer__copy, .footer__terms-link {
@@ -791,14 +798,68 @@ textarea::placeholder{
 
 .footer-social-developers i{
   font-size: 25px;
+  color: white;
 }
 
 .footer-social-developers i:hover{
-  color: var(--colo-span-solcial-footer);
+  color: #1CD9D5;
   cursor: pointer;
   font-size: 35px;
   transition: 200ms;
 }
+
+
+
+
+/*========== SCROLL UP ==========*/
+.contenedor-formulario .formulario-h1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+
+.contenedor-formulario .contenido-contactanos{
+  width: 1024px;
+  background-color: #1CD9D5;
+  display: flex;
+  margin: auto;
+  box-shadow: 6px 20px 90px rgb(74, 74, 74);
+}
+
+.contenido-contactanos .formulario{
+  width: 70%;
+  margin: 10px;
+}
+.contenido-contactanos .formulario .nombre, .email{
+  width: 100%;
+  height: 35px;
+  background: none;
+  border-bottom: 1px solid #d63031;
+  margin-top: 20px;
+}
+.contenido-contactanos .formulario .form_input--message{
+  background: none;
+  margin-top: 20px;
+  border-bottom: 1px solid #d63031;
+}
+
+
+.contenido-contactanos .info{
+  width: 50%;
+  margin: 10px;
+}
+
+
+
+
+
+
+
+
+
 
 /*========== SCROLL UP ==========*/
 .scrollup {
