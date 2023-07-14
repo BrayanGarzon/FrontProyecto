@@ -812,53 +812,106 @@ textarea::placeholder{
 
 
 /*========== SCROLL UP ==========*/
+.contenedor-formulario{
+  margin-bottom: 40px;
+}
 .contenedor-formulario .formulario-h1{
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 40px;
-  margin-bottom: 15px;
+  font-size: 50px;
+  margin-bottom: 30px;
 }
 
 
 .contenedor-formulario .contenido-contactanos{
   width: 1024px;
-  background-color: #1CD9D5;
+  height: 500px;
+  background-color: white;
   display: flex;
   margin: auto;
-  box-shadow: 6px 20px 90px rgb(74, 74, 74);
+  box-shadow: 6px 20px 90px rgb(128, 128, 128);
+  border: none;
 }
 
 .contenido-contactanos .formulario{
   width: 70%;
-  margin: 10px;
+  margin: 20px;
 }
+.contenido-contactanos .formulario .h1{
+  margin: auto;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 30px;
+}
+
 .contenido-contactanos .formulario .nombre, .email{
   width: 100%;
   height: 35px;
   background: none;
-  border-bottom: 1px solid #d63031;
-  margin-top: 20px;
+  border-bottom: 1px solid #11414B;
+  margin-top: 25px;
 }
 .contenido-contactanos .formulario .form_input--message{
   background: none;
-  margin-top: 20px;
-  border-bottom: 1px solid #d63031;
+  margin-top: 30px;
+  border-bottom: 1px solid #11414B;
 }
 
 
-.contenido-contactanos .info{
+
+
+
+/*=========SECTION RIGH============*/
+
+.contenido-contactanos .more_information{
   width: 50%;
-  margin: 10px;
+  background: #11414B;
 }
 
+.contenido-contactanos .more_information .info{
+  margin: 40px;
+  color: white;
+}
+.contenido-contactanos .more_information .info h1{
+  color: white;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 35px;
+  margin-top: 40px;
+  font-size: 30px;
+}
+ 
+.contenido-contactanos .more_information .info ul li{
+  margin-top: 15px;
+  font-size: 15px;
+}
+.contenido-contactanos .more_information .info ul li i{
+  margin-top: 15px;
+  font-size: 25px;
+}
+.contenido-contactanos .more_information .info .redes{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-
-
-
-
-
-
+  margin-top: 30px;
+}
+.contenido-contactanos .more_information .info .redes a{
+  
+  color: white;
+  text-decoration: none;
+  font-size: 35px;
+  margin: 15px;
+}
+.contenido-contactanos .more_information .info .redes a i:hover{
+  color:#1CD9D5;
+  cursor: pointer;
+  font-size: 40px;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+}
 
 
 /*========== SCROLL UP ==========*/
@@ -1030,6 +1083,76 @@ textarea::placeholder{
   width: 100px;
   height: 100px;
 }
+
+
+/*=============== SECTION LOGIN ===============*/
+
+
+.login{
+  margin: auto;
+  width: 1024px;
+  height: 500px;
+  background: white;
+}
+.login .loginH1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  
+}
+.login .contenido{
+  width: 40%;
+  height: 80%;
+  margin: auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 6px 20px 90px rgb(128, 128, 128);
+  
+}
+
+.formularioLogin{
+  margin: 25px;
+  margin-top: 50px;
+}
+
+
+
+.formularioLogin .input_login{
+  width: 100%;
+  height: 40px;
+  margin-top: 10px;
+  background: #E8F0FE;
+  border-radius: 10px;
+  left: 10px;
+}
+.formularioLogin .input_login small{
+  margin: 10px;
+}
+
+.container-button-enviar-login .button{
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.login .contenido .registrarme{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -5px;
+  font-size: 15px;
+  direction: none;
+  color: #11414B;
+}
+.login .contenido .registrarme:hover{
+  color: #77e87f;
+  transition: 3ms;
+}
+    
+
+
+
 
 
 

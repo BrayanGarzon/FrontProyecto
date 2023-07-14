@@ -1,4 +1,6 @@
+
 <section id="subscribe_section" class="subscribe section">
+    <!--
     <div class="subscribe__bg">
         <div class="subscribe__container container">
             <h2 class="section__title subscribe__title">Inicia sesion aqui!</h2>
@@ -26,4 +28,47 @@
             </form>
         </div>
     </div>
+-->
+    <br><br><br><br><br>
+
+    <div class="login">
+        
+        <div class="contenido">
+            <br><br>
+            <h1 class="loginH1">Bienvenido</h1>
+
+            <form id="formulario" (ngSubmit)="saveLogin()" [formGroup]="formLogin" class="formularioLogin" method="POST">
+
+               
+                   <input type="email" formControlName="email" placeholder="Usuario" class="input_login" name="email" id="email" autocomplete="off" required>
+
+                    <small
+                    *ngIf="formLogin.controls['email'].errors?.['required'] && formLogin.controls['email'].touched"
+                    class="p-error block" style="color: red;">el usuario es necesario</small>
+                
+
+                <input type="password" formControlName="password" name="password" placeholder="Contraseña" class="input_login" autocomplete="off" required>
+                <small
+                    *ngIf="formLogin.controls['password'].errors?.['required'] && formLogin.controls['password'].touched"
+                    class="p-error block" style="color: red;">la contraseña es necesaria</small>
+                
+                <br><br><br>
+
+
+                <div class="container-button-enviar-login">
+                    <button class="button" type="submit">Ingresar</button>
+                         
+                </div>
+
+            </form>
+            <div class="registrarme">
+                <a [routerLink]="['/register']" class="registrarme">Aun no tengo cuenta</a>
+            </div>
+            
+        </div>
+        
+    </div>
+
+
+
 </section>

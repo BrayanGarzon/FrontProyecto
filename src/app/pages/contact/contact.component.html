@@ -1,4 +1,5 @@
 <section id="subscribe_section" class="subscribe section">
+<!--
     <div class="subscribe__bg">
         <div class="subscribe__container container">
             <h2 class="section__title subscribe__title">Déjanos tu inquietud <br> Te respondemos de inmediato</h2>
@@ -40,16 +41,18 @@
             </form>
         </div>
     </div>
-    <br><br><br><br>
 
+
+    <br><br><br><br>
+-->
 
 <div class="contenedor-formulario">
     <h1 class="formulario-h1">Contactanos</h1>
     <div class="contenido-contactanos">
         
         <div class="formulario">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, illum?</p>
-            <br>
+            <h1 class="h1">Ingresa los datos</h1>
+            
             <form id="formulario" (ngSubmit)="sendEmail()" [formGroup]="formEmail" method="POST" class="form">
 
                 <input type="text" placeholder="Nombre Completo" class="nombre" name="full_name"  id="full_name" formControlName="full_name" required>
@@ -60,8 +63,7 @@
                 <input type="text" placeholder="Numero Telefonico" class="nombre" name="full_name"  id="full_name" formControlName="full_name" required  maxlength="10">
                 <small
                     *ngIf="formEmail.controls['full_name'].errors?.['required'] && formEmail.controls['full_name'].touched"
-                    class="p-error block" style="color: red;">Ingresa tu nombre</small>
-                
+                    class="p-error block" style="color: red;">Ingresa tu numero telefonico</small>
 
                 <input type="email" name="email" id="email" placeholder="Correo Electronico" class="email" formControlName="email" required>
                 <small *ngIf="formEmail.controls['email'].errors?.['required'] && formEmail.controls['email'].touched"
@@ -81,80 +83,36 @@
                     <button class="button" type="submit">
                         Enviar
                     </button>
-                    <input type="reset" value="Borrar" class="button-clear-content">
+                    <input type="reset" value="Borrar" class="button-clear-content" style="cursor: pointer;">
                 </div>
             </form>
         </div>
 
 
 
-
-        <div class="info">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, nemo.</p>
-            <h4>More Info</h4>
-            <ul>
-                <li><i class="fas fa-map-marker-alt"></i> Baker Street</li>
-                <li><i class="fas fa-phone"></i> (111) 111 111 111</li>
-                <li><i class="fas fa-envelope-open-text"></i> contact@website.com</li>
-            </ul>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero provident ipsam necessitatibus repellendus?</p>
-            <p>Company.com</p>
+        <div class="more_information">
+            <div class="info">
+                <h1>Mayor Información</h1>
+                <p style="text-align: justify;">No dudes en hacernos saber tus peticiones, Estamos para ayudarte!</p>
+                <ul>
+                    <li><i class="fa fa-location-dot"></i>  Colombia - Villavicencio</li>
+                    <li><i class="fa fa-phone"></i>  (+57) 322 947 5876</li>
+                    <li><i class="fa fa-envelope-open-text"></i>  contact@website.com</li>
+                </ul>
+                <div class="redes">
+                    <a href="https://github.com/BrayanGarzon" target="_blank"><i class="fa-brands fa-github-alt"></i></a>
+                    <a href="https://www.facebook.com/brayan.garzon.33234"><i class="fa-brands fa-facebook" target="_blank"></i></a>
+                    <a href="https://wa.link/sibpka" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.link/sibpka" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
         </div>
+        
     </div>
 </div>
 
 
 
-
-    <br><br><br><br>
-    <div class="content-formulario">
-
-        <h1 class="logo-formulario">Contact <span>Us</span></h1>
-
-        <div class="contact-wrapper animated bounceInUp">
-            <div class="contact-form">
-                <h3 class="contact-form-h3">Contact us</h3>
-                <form action="">
-                    <p class="contact-form-p">
-                        <label>FullName</label>
-                        <input type="text" name="fullname" class="contact-form-input">
-                    </p>
-                    <p>
-                        <label>Email Adress</label>
-                        <input type="email" name="email">
-                    </p>
-                    <p>
-                        <label>Phone Number</label>
-                        <input type="tel" name="phone">
-                    </p>
-                    <p>
-                        <label>Affair</label>
-                        <input type="text" name="affair">
-                    </p>
-                    <p class="block">
-                       <label>Message</label> 
-                        <textarea name="message" rows="3"></textarea>
-                    </p>
-                    <p class="block">
-                        <button>
-                            Send
-                        </button>
-                    </p>
-                </form>
-            </div>
-            <div class="contact-info">
-                <h4>More Info</h4>
-                <ul>
-                    <li><i class="fas fa-map-marker-alt"></i> Baker Street</li>
-                    <li><i class="fa-brands fa-whatsapp"></i> (111) 111 111 111</li>
-                    <li><i class="fas fa-envelope-open-text"></i> contact@website.com</li>
-                </ul>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero provident ipsam necessitatibus repellendus?</p>
-                <p>Company.com</p>
-            </div>
-        </div>
-
-    </div>
-
+<br><br><br>
 
 </section>
