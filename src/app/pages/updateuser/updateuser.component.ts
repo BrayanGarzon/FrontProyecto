@@ -48,8 +48,8 @@ export class UpdateuserComponent {
         window.location.reload();
       });
       Swal.fire(
-        'Good job!',
-        'User Register successfull!',
+        'Genial!',
+        'Información actualizada!',
         'success'
       )
     }, error => {

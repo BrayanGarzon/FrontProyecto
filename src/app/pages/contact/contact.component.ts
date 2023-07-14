@@ -34,7 +34,7 @@ export class ContactComponent {
         })
       } else {
         Swal.fire(
-          'Good job!',
+          'Gracias, Tu mensaje fue enviado!',
           resp.message,
           'success'
         )

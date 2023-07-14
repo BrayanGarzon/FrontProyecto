@@ -1,4 +1,12 @@
 <div *ngIf="site">
+    <!--
+    <br><br><br><br>
+    <div
+        style="width: auto; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-top: 20px; font-size: 30px;">
+        <h2>{{ site.name }}</h2>
+
+    </div>
+    
     <div
         style="width: auto; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-top: 30px;">
         <h1>Categoria: {{ site.category.name }}</h1>
@@ -8,6 +16,11 @@
         <h4>Nombre del sitio turistico: {{ site.name }}</h4>
 
     </div>
+    
+    <br><br>
+    <hr style="max-width: 1024px; background-color: #14505C; margin: auto;"> linea-->
+
+    <!--linea
     <div
         style="width: auto; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-top: 30px;">
         <h4>Precio: {{ site.price == 0 ? 'ingreso gratuito' : site.price | currency }}</h4>
@@ -23,7 +36,16 @@
         <img src="{{ site.image }}" alt="" class="place__img">
     </div>
 </div>
-<section id="subscribe_section" style="padding-top: 3rem;" class="subscribe section">
+
+-->
+
+
+
+
+
+
+<section id="subscribe_section" style="padding-top: 3rem;" class="formularioComentario">
+    <!--
     <div class="subscribe__bg">
         <div class="subscribe__container container">
             <h2 class="section__title subscribe__title">Enviar comentarios de este sitio </h2>
@@ -59,4 +81,76 @@
             </form>
         </div>
     </div>
+
+-->
+
+
+    <br><br><br><br>
+
+    <div class="tituloComentario">
+        <h1 class="h1comentario">Hacer comentario</h1>
+    </div>
+    <div class="contenedorPadre">
+        <div class="contenedorComentario">
+
+
+
+
+            <div class="infoEstablecimiento">
+                <div
+                    style="width: auto; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-top: 10px; font-size: 25px;">
+                    <h2>{{ site.name }}</h2>
+                </div>
+                <div
+                    style="width: auto; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-top: 20px;">
+
+                    <img src="{{ site.image }}" alt="" class="place__img">
+                </div>
+                <div
+                    style="width: auto; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-top: 30px; text-align: justify; margin: 30px; ">
+                    <h5>{{ site.description }}</h5>
+                </div>
+            </div>
+
+
+
+
+            <div class="formulario">
+                <h3 style="margin: 10px; margin-top: 100px; margin-bottom: 40px; color: #11414B; text-align: center;">Realiza un comentario y asigna una calificación segun tu experiencia.</h3>
+
+                <form id="formulario" (ngSubmit)="sendComment()" [formGroup]="formComment" class="formularioComentario"
+                    method="POST" >
+                    <hr style="border-bottom: 1px solid #11414B; width: 100%; ">
+
+                    <textarea name="message" id="message" class="form_input--message" cols="30" rows="10"
+                        placeholder="Escribe tu mensaje" required formControlName="message" style="margin-top: 15px;"></textarea>
+                    <small
+                        *ngIf="formComment.controls['message'].errors?.['required'] && formComment.controls['message'].touched"
+                        class="p-error block" style="color: red;">El mensaje es necesario.</small>
+                        <hr style="border-bottom: 1px solid #11414B; width: 100%;">
+                    
+
+                    <input type="number" formControlName="quality" name="quality" placeholder="Calificación"
+                        class="inputFormularioComentario" style="margin-top: 25px; height: 30px; width: 100%; background: none;" required >
+
+                        <hr style="border-bottom: 1px solid #11414B; width: 100%; ">
+                    <small
+                        *ngIf="formComment.controls['quality'].errors?.['required'] && formComment.controls['quality'].touched"
+                        class="p-error block" style="color: red;">La calificación es necesaria</small>
+                    <small
+                        *ngIf="formComment.controls['quality'].errors?.['min'] && formComment.controls['quality'].touched"
+                        class="p-error block" style="color: red;">La calificación minima es 0.</small>
+                    <small
+                        *ngIf="formComment.controls['quality'].errors?.['max'] && formComment.controls['quality'].touched"
+                        class="p-error block" style="color: red;">La calificación maxima es 5.</small>
+                    
+                    <br>
+                    <div class="container-button-enviar">
+                        <button class="button" type="submit" style="width: 100%;">Enviar</button>
+                    </div>
+                </form>           
+            </div>
+        </div> 
+    </div>
 </section>
+<br><br><br><br><br>

@@ -43,7 +43,7 @@ export class CommentComponent {
     }
     this.commentsService.saveComment(comment).subscribe(respponse => {
       Swal.fire(
-        'Good job!',
+        'Genial!',
         'Gracias por tu comentario!',
         'success'
       )

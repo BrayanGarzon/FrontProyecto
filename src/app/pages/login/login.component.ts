@@ -25,8 +25,8 @@ export class LoginComponent {
     }
     this.authService.authLogin(this.formLogin.value).subscribe(response => {
       Swal.fire(
-        'Good job!',
-        'login is successfull!',
+        'Genial!',
+        'Tus datos son correctos!',
         'success'
       )
       this.router.navigateByUrl('/discover').then(() => {

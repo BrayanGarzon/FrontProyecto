@@ -67,8 +67,8 @@ export class RegisterComponent {
     this.authservice.authRegister(formData).subscribe(response => {
       this.router.navigate(['/login'])
       Swal.fire(
-        'Good job!',
-        'User Register successfull!',
+        'Genial!',
+        'Tu usuario se creo correctamente!',
         'success'
       )
     }, error => {
