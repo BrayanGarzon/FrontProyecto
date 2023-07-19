@@ -192,9 +192,20 @@ input {
 
 .container {
   max-width: 968px;
-  margin-left: var(--mb-1);
-  margin-right: var(--mb-1);
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
+
+@media screen and (max-width:770px){
+  .container{
+    flex-direction: column;
+  }
+  .container .image{
+    width: 100%;
+  }
+}
+
+
 
 .grid {
   display: grid;
@@ -318,17 +329,48 @@ input {
 
 }
 
+.seccion {
+  display: flex;
+}
+
+.texto, .imagen {
+  max-width: 50%;
+  padding: 20px;
+}
+.imagen{
+  margin-left: 120px;
+}
 
 
 /*=SECION HOME DEPARTAMENTOD EL META=*/
 
  /* Estilos para pantallas más pequeñas */
- @media screen and (max-width: 768px) {
-  .imagen {
-    margin-left: -120px;
+ @media screen and (max-width: 830px) {
+  .seccion{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .texto{
+    max-width:100%;
+  }
+  .imagen{
+    max-width:100%;
+    margin-left: 0;
   }
 }
 
+@media screen and(min-width: 768px){
+  .imagen, .texto{
+    max-width: 50%;
+  }
+  .imagen{
+    margin-left: -120px;
+    width: 80%;
+  }
+}
 
 
 
@@ -950,7 +992,14 @@ textarea::placeholder{
 
 
 
-/*========== SCROLL UP ==========*/
+
+
+
+
+
+
+
+/*========== STILOS FORMULARIO CONTACTANOS ==========*/
 .contenedor-formulario{
   margin-bottom: 40px;
 }
@@ -1053,6 +1102,279 @@ textarea::placeholder{
 }
 
 
+/*========== STILOS FORMULARIO CONTACTANOS ==========*/
+
+/* Add a media query for screens smaller than 1050px */
+@media (max-width: 1050px) {
+  .contenedor-formulario .contenido-contactanos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contenido-contactanos {
+    width: 90%;
+    max-width: 600px; /* Adjust this value to your preference */
+    height: auto;
+  }
+
+  .contenido-contactanos .formulario,
+  .contenido-contactanos .more_information {
+    width: 100%;
+  }
+}
+
+/* The rest of your existing CSS styles remain unchanged */
+
+.contenedor-formulario {
+  margin-bottom: 40px;
+}
+
+.contenedor-formulario .formulario-h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+.contenedor-formulario .contenido-contactanos {
+  width: 1024px;
+  height: 500px;
+  background-color: white;
+  display: flex;
+  margin: auto;
+  box-shadow: 6px 20px 90px rgb(128, 128, 128);
+  border: none;
+}
+
+.contenido-contactanos .formulario {
+  width: 90%;
+  margin: 20px;
+}
+
+.contenido-contactanos .formulario .h1 {
+  margin: auto;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.contenido-contactanos .formulario .nombre,
+.email {
+  width: 100%;
+  height: 35px;
+  background: none;
+  border-bottom: 1px solid #11414B;
+  margin-top: 25px;
+}
+
+.contenido-contactanos .formulario .form_input--message {
+  background: none;
+  margin-top: 30px;
+  border-bottom: 1px solid #11414B;
+}
+
+/*=========SECTION RIGH============*/
+
+.contenido-contactanos .more_information {
+  width: 100%;
+  background: #11414B;
+}
+
+.contenido-contactanos .more_information .info {
+  margin: 40px;
+  color: white;
+}
+
+.contenido-contactanos .more_information .info h1 {
+  color: white;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 35px;
+  margin-top: 40px;
+  font-size: 30px;
+}
+
+.contenido-contactanos .more_information .info ul li {
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+.contenido-contactanos .more_information .info ul li i {
+  margin-top: 15px;
+  font-size: 25px;
+}
+
+.contenido-contactanos .more_information .info .redes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.contenido-contactanos .more_information .info .redes a {
+  color: white;
+  text-decoration: none;
+  font-size: 35px;
+  margin: 15px;
+}
+
+.contenido-contactanos .more_information .info .redes a i:hover {
+  color: #1CD9D5;
+  cursor: pointer;
+  font-size: 40px;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+}
+
+
+
+/* Add a media query for screens smaller than 700px */
+@media (max-width: 700px) {
+  .contenedor-formulario .contenido-contactanos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contenido-contactanos {
+    width: 90%;
+    max-width: 400px; /* Adjust this value to your preference */
+    height: auto;
+  }
+
+  .contenido-contactanos .formulario,
+  .contenido-contactanos .more_information {
+    width: 100%;
+  }
+}
+
+/* The rest of your existing CSS styles remain unchanged */
+
+.contenedor-formulario {
+  margin-bottom: 40px;
+}
+
+.contenedor-formulario .formulario-h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+.contenedor-formulario .contenido-contactanos {
+  width: 1024px;
+  height: 500px;
+  background-color: white;
+  display: flex;
+  margin: auto;
+  box-shadow: 6px 20px 90px rgb(128, 128, 128);
+  border: none;
+}
+
+.contenido-contactanos .formulario {
+  width: 90%;
+  margin: 20px;
+}
+
+.contenido-contactanos .formulario .h1 {
+  margin: auto;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.contenido-contactanos .formulario .nombre,
+.email {
+  width: 100%;
+  height: 35px;
+  background: none;
+  border-bottom: 1px solid #11414B;
+  margin-top: 25px;
+}
+
+.contenido-contactanos .formulario .form_input--message {
+  background: none;
+  margin-top: 30px;
+  border-bottom: 1px solid #11414B;
+}
+
+/*=========SECTION RIGH============*/
+
+.contenido-contactanos .more_information {
+  width: 100%;
+  background: #11414B;
+}
+
+.contenido-contactanos .more_information .info {
+  margin: 40px;
+  color: white;
+}
+
+.contenido-contactanos .more_information .info h1 {
+  color: white;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 35px;
+  margin-top: 40px;
+  font-size: 30px;
+}
+
+.contenido-contactanos .more_information .info ul li {
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+.contenido-contactanos .more_information .info ul li i {
+  margin-top: 15px;
+  font-size: 25px;
+}
+
+.contenido-contactanos .more_information .info .redes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.contenido-contactanos .more_information .info .redes a {
+  color: white;
+  text-decoration: none;
+  font-size: 35px;
+  margin: 15px;
+}
+
+.contenido-contactanos .more_information .info .redes a i:hover {
+  color: #1CD9D5;
+  cursor: pointer;
+  font-size: 40px;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*========== SCROLL UP ==========*/
 .scrollup {
   position: fixed;
@@ -1096,79 +1418,6 @@ textarea::placeholder{
 }
 
 
-
-/*================estyles page developers==================*/
-
-
-/*-----container-father------*/
-.container-father{
-  width: 70%;
-  height: 600px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 6% auto;
-
-  box-shadow: 11px 12px 25px 1px rgba(0,0,0,0.43);
-  -webkit-box-shadow: 11px 12px 25px 1px rgba(0,0,0,0.43);
-  -moz-box-shadow: 11px 12px 25px 1px rgba(0,0,0,0.43);
-}
-
-/*-----container-son------*/
-.container-father .container-son{
-  width: 96%;
-  height: 95%;
-  background-color: aquamarine;
-  border-radius: 20px;
-  
-}
-
-
-/*-----container-cajas------*/
-.container-father .container-son .cajas{
-  width: auto;
-  height: 90%;
-  border-radius: 20px;
-  background-color: antiquewhite;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-/*---editando las cajas hijos---*/
-.container-father .container-son .cajas .H-I{
-  width: 50%;
-  height: 90%;
-  background-color: aqua;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 12px;
-  padding: 0;
-}
-.container-father .container-son .cajas .H-D{
-  width: 50%;
-  height: 90%;
-  background-color: aqua;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 12px;
-  padding: 0;
-}
-
-
-/*------contenedor boton regresar -----*/
-.container-father .container-son .container-button {
-  width: 100%;
-  height: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 
 
@@ -1226,38 +1475,41 @@ textarea::placeholder{
 
 /*=============== SECTION LOGIN ===============*/
 
-
-.login{
+.login {
   margin: auto;
-  width: 1024px;
-  height: 500px;
+  width: 100%; /* Cambiamos el ancho a 100% para que se ajuste a diferentes tamaños de pantalla */
+  max-width: 1024px; /* Agregamos un máximo de ancho */
+  height: auto; /* Cambiamos la altura a auto para que se ajuste al contenido */
   background: white;
-}
-.login .loginH1{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 35px;
-  
+  justify-content: center; /* Centramos el contenido horizontalmente */
+  align-items: center; /* Centramos el contenido verticalmente */
+  padding: 20px;
 }
-.login .contenido{
-  width: 40%;
-  height: 80%;
+
+.login .loginH1 {
+  font-size: 35px;
+  text-align: center; /* Añadimos esta propiedad para centrar el título */
+  width: 100%; /* Aseguramos que el título ocupe todo el ancho */
+  margin-bottom: 20px; /* Agregamos un espacio inferior para separarlo del formulario */
+}
+
+.login .contenido {
+  width: 100%; /* Cambiamos el ancho a 100% para que se ajuste a diferentes tamaños de pantalla */
+  height: auto; /* Cambiamos la altura a auto para que se ajuste al contenido */
+  max-width: 600px; /* Agregamos un máximo de ancho */
   margin: auto;
   background: white;
   border-radius: 10px;
   box-shadow: 6px 20px 90px rgb(128, 128, 128);
-  
+  padding: 20px;
 }
 
-.formularioLogin{
+.formularioLogin {
   margin: 25px;
-  margin-top: 50px;
 }
 
-
-
-.formularioLogin .input_login{
+.formularioLogin .input_login {
   width: 100%;
   height: 40px;
   margin-top: 10px;
@@ -1265,82 +1517,185 @@ textarea::placeholder{
   border-radius: 10px;
   left: 10px;
 }
-.formularioLogin .input_login small{
+
+.formularioLogin .input_login small {
   margin: 10px;
 }
 
-.container-button-enviar-login .button{
+.container-button-enviar-login .button {
   width: 100%;
   align-items: center;
   justify-content: center;
 }
 
-.login .contenido .registrarme{
+.login .contenido .registrarme {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -5px;
+  margin-top: 10px; /* Reducimos el espacio superior */
   font-size: 15px;
   direction: none;
   color: #11414B;
 }
-.login .contenido .registrarme:hover{
-  color: #77e87f;
-  transition: 3ms;
+
+/* Media query para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  .login {
+    padding: 10px; /* Reducimos el espacio interno */
+  }
+
+  .login .contenido {
+    padding: 10px; /* Reducimos el espacio interno */
+  }
+
+  .login .loginH1 {
+    font-size: 24px; /* Reducimos el tamaño de la fuente */
+  }
 }
     
 
 
 
-/*===============FORM REGISTER===============*/
 
-.contenedorFormularioRegistro{
-  width: 500px;
-  height: 655px;
+/*=============== FORM UPDATEUSER ===============*/
+.contenedorUpdateuser{
+  margin: auto;
+  width: 100%;
+  max-width: 1024px;
+  height: auto;
+  background: white;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.contenedorUpdateuser .contenidoUpdateuser{
+  width: 100%;
+  max-width: 600px;
+  height: 60%;
+  margin: auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 6px 20px 90px rgb(128, 128, 128);
+  padding: 20px;
+}
+.tituloUpdateuser{
+  color: #11414B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.contenedorUpdateuser .contenidoUpdateuser .formUpdateUser{
+  margin: 20px;
+  margin-top: 15px;
+}
+
+.contenedorUpdateuser .contenidoUpdateuser .formUpdateUser .updateaUser__input{
+  margin-top: 40px;
+  width: 100%;
+  height: 35px;
+  background: none;
+  border-bottom: 1px solid #11414B;
+}
+.contenedorUpdateuser .contenidoUpdateuser .formUpdateUser .botonUpdateuser{
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contenedorUpdateuser .contenidoUpdateuser .formUpdateUser .botonUpdateuser .button{
+  width: 100%;
+}
+
+
+
+/* Estilos específicos para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  .contenedorUpdateuser {
+    padding: 10px; /* Reducimos el espacio interno */
+  }
+
+  .contenedorUpdateuser .contenidoUpdateuser {
+    padding: 10px; /* Reducimos el espacio interno */
+  }
+
+  .tituloUpdateuser {
+    font-size: 24px; /* Reducimos el tamaño de la fuente */
+  }
+
+  .contenedorUpdateuser .contenidoUpdateuser .formUpdateUser .updateaUser__input {
+    margin-top: 20px; /* Reducimos el espacio superior */
+  }
+}
+
+/*===============FORM REGISTER===============*/
+.contenedorFormularioRegistro {
+  width: 100%; /* Cambiamos el ancho a 100% para que se ajuste a diferentes tamaños de pantalla */
+  max-width: 500px; /* Agregamos un máximo de ancho */
+  height: auto; /* Cambiamos la altura a auto para que se ajuste al contenido */
   background: white;
   margin: auto;
   border-radius: 15px;
   box-shadow: 6px 20px 90px rgb(128, 128, 128);
   margin-bottom: 30px;
+  padding: 20px; /* Añadimos espacio interno */
+  box-sizing: border-box; /* Aseguramos que el padding no aumente el tamaño total */
 }
 
-.contenedorFormularioRegistro .contenidoFormulario, .logearme{
+.contenedorFormularioRegistro .contenidoFormulario,
+.logearme {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 10px; /* Ajustamos el espacio inferior */
 }
-.contenedorFormularioRegistro .contenidoFormulario .tituloRegistro{
-  margin-top: 20px;
+
+.contenedorFormularioRegistro .contenidoFormulario .tituloRegistro {
   font-size: 30px;
-
+  text-align: center; /* Centramos el título */
+  width: 100%;
 }
-.contenedorFormularioRegistro .linea{
+
+.contenedorFormularioRegistro .linea {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 20px; /* Ajustamos el espacio inferior */
 }
-.contenedorFormularioRegistro .linea .hr{
+
+.contenedorFormularioRegistro .linea .hr {
   width: 50px;
   border-color: rgb(27, 122, 122);
-  
 }
 
-
-.contenedorFormularioRegistro .formularioRegistro .formulario_registro{
+.contenedorFormularioRegistro .formularioRegistro .formulario_registro {
   margin: 20px;
 }
 
-.contenedorFormularioRegistro .formularioRegistro .formulario_registro .inputFormularioRegistro{
+.contenedorFormularioRegistro .formularioRegistro .formulario_registro .inputFormularioRegistro {
   margin-top: 25px;
   width: 100%;
   height: 35px;
   background: none;
   border-bottom: 1px solid #11414B;
 }
-.contenedorFormularioRegistro .formularioRegistro .formulario_registro .container-button-enviar .button{
+
+.contenedorFormularioRegistro .formularioRegistro .formulario_registro .container-button-enviar .button {
   margin-top: 35px;
   width: 100%;
 }
+
+
+/* Media query para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  .contenedorFormularioRegistro {
+    max-width: 100%; /* Ajustamos el máximo de ancho */
+  }
+}
+
 
 
 

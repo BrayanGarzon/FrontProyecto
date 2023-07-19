@@ -112,10 +112,9 @@
                 *ngIf="formRegister.controls['email'].errors?.['required'] && formRegister.controls['email'].touched"
                 class="p-error block" style="color: red;">Ingresa tu Email</small>
             
-
-
-
-            <label style="margin-left: 5px;">
+     
+  
+            <label style="margin-left: 5px; color: #787f8a;">
                  Imagen de perfil
             </label>
             <input  type="file" class="inputFormularioRegistro" name="avatar" (change)="onFileSelected($event)"

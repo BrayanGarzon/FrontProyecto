@@ -2,7 +2,7 @@
     
     <br><br><br><br>
     <div
-        style="width: auto; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-top: 20px; font-size: 30px;">
+        style="width: auto; margin: 0 auto; text-align: center; margin-top: 20px; font-size: 30px;">
         <h2>{{ site.name }}</h2>
 
     </div>
@@ -59,7 +59,7 @@
 
 
 <div style="width: 50%; margin: 0 auto; align-items: center; justify-content: center; margin-top: 30px;"
-    *ngFor="let comment of comments">
+    *ngFor="let comment of comments" class="comentario">
 
     <div class="avatar">
         <img src="{{ comment.user?.avatar }}" alt="Avatar">

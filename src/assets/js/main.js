@@ -1,3 +1,7 @@
+
+
+
+
 const menuToggle = document.getElementById('menu');
 const menu = document.getElementById('menu');
 
@@ -8,9 +12,6 @@ menuLinks.forEach(link => {
     menu.checked = false; // Cerrar el menú estableciendo el valor del checkbox a false
   });
 });
-
-
-
 
 
 
@@ -92,15 +93,26 @@ function playPause(){
 
     }
 }
-videoButton.addEventListener('click', playPause)
+
+
+
+
+//VERIFICANDO SI ESTAS LINEAS NO SON NECESARIAS
+
+//videoButton.addEventListener('click', playPause) ///////////////////////////////////////////////////////
 
 function finalVideo(){
     // Video ends, icon change
     videoIcon.classList.remove('ri-pause-line')
     videoIcon.classList.add('ri-play-line')
 }
+
+
+
+//VERIFICANDO SI ESTAS LINEAS NO SON NECESARIAS
+
 // ended, when the video ends
-videoFile.addEventListener('ended', finalVideo)
+//videoFile.addEventListener('ended', finalVideo) ////////////////////////////////////////////////////////
 
 
 /*==================== SHOW SCROLL UP ====================*/ 
@@ -182,15 +194,19 @@ if (selectedTheme) {
   themeButton.classList[selectedIcon === 'ri-moon-line' ? 'add' : 'remove'](iconTheme)
 }
 
+
+//VERIFICANDO SI ESTAS LINEAS NO SON NECESARIAS
+
+
 // Activate / deactivate the theme manually with the button
-themeButton.addEventListener('click', () => {
+//themeButton.addEventListener('click', () => {
     // Add or remove the dark / icon theme
-    document.body.classList.toggle(darkTheme)
-    themeButton.classList.toggle(iconTheme)
+  //  document.body.classList.toggle(darkTheme)
+    //themeButton.classList.toggle(iconTheme)
     // We save the theme and the current icon that the user chose
-    localStorage.setItem('selected-theme', getCurrentTheme())
-    localStorage.setItem('selected-icon', getCurrentIcon())
-})
+    //localStorage.setItem('selected-theme', getCurrentTheme())
+    //localStorage.setItem('selected-icon', getCurrentIcon())
+//})
 
 
 
@@ -202,8 +218,13 @@ function limpiar(){
     document.getElementById('formulario').reset();
 }
 
-document.getElementById('nombre-completo').reset();
-document.getElementById('nombre-completo').reset();
+
+//VERIFICANDO SI ESTAS LINEAS NO SON NECESARIAS
+
+
+
+//document.getElementById('nombre-completo').reset();   
+//document.getElementById('nombre-completo').reset();
 
 
 

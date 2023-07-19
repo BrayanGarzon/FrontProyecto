@@ -1,4 +1,5 @@
 <section id="subscribe_section" class="subscribe section">
+<!--
     <div class="subscribe__bg">
         <div class="subscribe__container container">
             <h2 class="section__title subscribe__title">Actualiza tu perfil aqui!</h2>
@@ -35,4 +36,48 @@
             </form>
         </div>
     </div>
+-->
+
+    
+    <!--NEW FORM FOR THE UPDATEUSER-->
+    <br><br><br>
+    <div class="contenedorUpdateuser">
+        <h1 class="tituloUpdateuser">Actualiza tu perfil aqui!</h1>
+        <div class="contenidoUpdateuser">
+            
+            <form id="formulario" (ngSubmit)="saveRegister()" [formGroup]="formRegister" class="formUpdateUser"
+                method="POST">
+
+                <input type="text" placeholder="Nombres" formControlName="name" [(ngModel)]="user.name" class="updateaUser__input" name="name"
+                    id="name" required>
+                <small
+                    *ngIf="formRegister.controls['name'].errors?.['required'] && formRegister.controls['name'].touched"
+                    class="p-error block" style="color: red;">Es necesario que ingreses tu nombre</small>
+                
+
+                <input type="email" formControlName="email" placeholder="Correo" [(ngModel)]="user.email" class="updateaUser__input" name="email"
+                    id="email" required>
+                <small
+                    *ngIf="formRegister.controls['email'].errors?.['required'] && formRegister.controls['email'].touched"
+                    class="p-error block" style="color: red;">Es necesario que ingreses el correo</small>
+                
+
+                <input type="password" formControlName="password" name="password" placeholder="Contraseña"
+                    class="updateaUser__input" required>
+                <small
+                    *ngIf="formRegister.controls['password'].errors?.['required'] && formRegister.controls['password'].touched"
+                    class="p-error block" style="color: red;">Es necesario que ingreses una contraseña</small>
+                
+                <br>
+
+
+                <div class="botonUpdateuser">
+                    <button class="button" type="submit">Actualziar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <br><br><br>
+
 </section>
