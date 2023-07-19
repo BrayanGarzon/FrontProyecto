@@ -205,11 +205,104 @@ input {
 .header {
   width: 100%;
   position: fixed;
-  top: 0;
+  margin-top: -70PX;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: transparent;
+  
+  
+  
 }
+
+
+/*===NEW NAVBAR====*/
+.nav{
+  background-color: #11414B;
+  height: 80px;
+  color: white;
+}
+.nav__logo{
+  font-size: 1.5em;
+  font-weight: 900;
+  color: white;
+  cursor: pointer;
+}
+.nav__menu{
+  display: grid;
+  grid-auto-flow: column;
+  gap: 3em;
+
+}
+.nav__item, li{
+  color: white;
+  text-decoration: none;
+  --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  
+  
+}
+.nav__item::after{
+  content: "";
+  display: block;
+  background: #FFF;
+  width: 90%;
+  margin-top: 3px;
+  height: 3px;
+  clip-path: var(--clippy);
+  transition: clip-path .4s;
+}
+.nav__item:hover{
+  cursor: pointer;
+  --clippy: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+}
+.nav__container{
+  display: flex;
+  height: 100%;
+  width: 90%;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+.nav__label, .nav__input{
+  display: none;
+}
+
+@media (max-width:770px){
+  .nav{
+    height: 70px;
+  }
+  .nav__label{
+    display: block;
+    cursor: pointer;
+  }
+  .nav__menu{
+    position: fixed;
+    top: 80px;
+    bottom: 0;
+    background: rgba(71, 71, 71, 0.71);
+    width: 100%;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    font-size: 1.5em;
+    font-weight: bold;
+    clip-path: circle(0 at center);
+    transition: clip-path 1s ease-in-out;
+  }
+  .nav__input:checked + .nav__menu{
+    background: rgba(71, 71, 71, 0.597);
+    clip-path: circle(100% at center);
+  }
+
+}
+
+
+
+
 
 /*=============== NAV ===============*/
 .nav {
@@ -217,6 +310,7 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  list-style: none;
 }
 
 .nav__logo, .nav__toggle {
@@ -241,11 +335,11 @@ input {
   .nav__menu {
     position: fixed;
     background-color: var(--body-color);
-    top: 0;
+    top: 38px;
     right: -100%;
-    width: 70%;
+    width: 100%;
     height: 100%;
-    box-shadow: -1px 0 4px rgba(14, 55, 63, 0.15);
+    box-shadow: -1px 0 4px rgba(255, 255, 255, 0.15);
     padding: 3rem;
     transition: .4s;
   }
@@ -258,13 +352,15 @@ input {
 }
 
 .nav__link {
-  color: var(--text-color-light);
+  color: white;
   font-weight: var(--font-semi-bold);
   text-transform: uppercase;
 }
 
+
+
 .nav__link:hover {
-  color: var(--text-color);
+  color: white;
 }
 
 .nav__close {
@@ -289,7 +385,8 @@ input {
 
 .scroll-header .nav__logo,
 .scroll-header .nav__toggle {
-  color: var(--title-color);
+  color: white;
+  cursor: pointer;
 }
 
 /* Active link */
@@ -307,6 +404,13 @@ input {
   bottom: -.75rem;
   left: 0;
 }
+
+
+
+
+
+
+
 
 /*=============== HOME ===============*/
 .home__img {
@@ -1359,10 +1463,10 @@ textarea::placeholder{
     background-color: var(--white-color);
   }
   .scroll-header .nav__link {
-    color: var(--text-color);
+    color: white;
   }
   .scroll-header .active-link {
-    color: var(--title-color);
+    color: white;
   }
   .scroll-header .active-link::before {
     background-color: var(--title-color);
