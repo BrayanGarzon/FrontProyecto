@@ -45,4 +45,12 @@ export class NavComponent {
     return this.isHome() ? "header" : "header scroll-header";
   }
 
+  // Función para cerrar el menú al hacer clic en una opción
+  closeMenu() {
+    const menuInput = document.getElementById('menu') as HTMLInputElement;
+    menuInput.checked = false;
+  }
+
 }
+
+

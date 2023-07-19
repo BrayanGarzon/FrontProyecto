@@ -1,3 +1,19 @@
+const menuToggle = document.getElementById('menu');
+const menu = document.getElementById('menu');
+
+// Agregar evento 'click' a todos los enlaces dentro del menú
+const menuLinks = document.querySelectorAll('.nav__menu a');
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    menu.checked = false; // Cerrar el menú estableciendo el valor del checkbox a false
+  });
+});
+
+
+
+
+
+
 /*==================== SHOW MENU ====================*/
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
@@ -188,4 +204,7 @@ function limpiar(){
 
 document.getElementById('nombre-completo').reset();
 document.getElementById('nombre-completo').reset();
+
+
+
 

@@ -62,21 +62,22 @@
 
             <div class="nav__menu">
                 
-                <a [routerLink]="['/']" href="#" 
-                class="nav__item">inicio</a>
-                <a [routerLink]="['/discover']" href="#" class="nav__item">Explora</a>
-                <a [routerLink]="['/contact']" href="#" class="nav__item">Contactanos</a>
                 
-                <li *ngIf="isLogged" class="nav__item">
+                <a [routerLink]="['/']" href="#" 
+                class="nav__item" (click)="closeMenu()">inicio</a>
+                <a [routerLink]="['/discover']" href="#" class="nav__item" (click)="closeMenu()">Explora</a>
+                <a [routerLink]="['/contact']" href="#" class="nav__item" (click)="closeMenu()">Contactanos</a>
+                
+                <li *ngIf="isLogged" class="nav__item" (click)="closeMenu()">
                     <a [routerLink]="['/update/user']" class="nav__link">Actualizar perfil</a>
                 </li>
                 <li *ngIf="isLogged" class="nav__item">
                     <a href="#" (click)="logout()" class="nav__link">Cerrar seción</a>
                 </li>
-                <li *ngIf="!isLogged" class="nav__item">
+                <li *ngIf="!isLogged" class="nav__item" (click)="closeMenu()">
                     <a [routerLink]="['/register']" routerLinkActive="active-link" class="nav__link">Registrate</a>
                 </li>
-                <li *ngIf="!isLogged" class="nav__item">
+                <li *ngIf="!isLogged" class="nav__item" (click)="closeMenu()">
                     <a  [routerLink]="['/login']" class="nav__link">
                         <i class="ri-user-3-fill"></i>
                     </a>
@@ -86,5 +87,6 @@
     </div>
     
     
-</header>   
 
+
+</header>  

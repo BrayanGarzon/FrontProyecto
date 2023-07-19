@@ -214,6 +214,24 @@ input {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*===NEW NAVBAR====*/
 .nav{
   background-color: #11414B;
@@ -281,7 +299,7 @@ input {
     position: fixed;
     top: 80px;
     bottom: 0;
-    background: rgba(71, 71, 71, 0.71);
+    background: rgba(71, 71, 71, 0.838);
     width: 100%;
     left: 0;
     display: flex;
@@ -297,6 +315,7 @@ input {
     background: rgba(71, 71, 71, 0.597);
     clip-path: circle(100% at center);
   }
+ 
 
 }
 
@@ -354,7 +373,7 @@ input {
 .nav__link {
   color: white;
   font-weight: var(--font-semi-bold);
-  text-transform: uppercase;
+  
 }
 
 
@@ -392,7 +411,7 @@ input {
 /* Active link */
 .active-link {
   position: relative;
-  color: var(--title-color);
+  color: white;
 }
 
 .active-link::before {
