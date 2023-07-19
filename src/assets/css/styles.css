@@ -1102,6 +1102,9 @@ textarea::placeholder{
 }
 
 
+
+
+
 /*========== STILOS FORMULARIO CONTACTANOS ==========*/
 
 /* Add a media query for screens smaller than 1050px */
@@ -1109,6 +1112,7 @@ textarea::placeholder{
   .contenedor-formulario .contenido-contactanos {
     flex-direction: column;
     align-items: center;
+    
   }
 
   .contenido-contactanos {
@@ -1239,7 +1243,7 @@ textarea::placeholder{
 
   .contenido-contactanos {
     width: 90%;
-    max-width: 400px; /* Adjust this value to your preference */
+    max-width: 380px; /* Adjust this value to your preference */
     height: auto;
   }
 
@@ -1631,6 +1635,13 @@ textarea::placeholder{
   }
 }
 
+
+
+
+
+
+
+
 /*===============FORM REGISTER===============*/
 .contenedorFormularioRegistro {
   width: 100%; /* Cambiamos el ancho a 100% para que se ajuste a diferentes tamaños de pantalla */
@@ -1692,9 +1703,14 @@ textarea::placeholder{
 /* Media query para pantallas más pequeñas */
 @media screen and (max-width: 768px) {
   .contenedorFormularioRegistro {
-    max-width: 100%; /* Ajustamos el máximo de ancho */
+    width: 100%;
+    max-width: 350px; /* Ajustamos el máximo de ancho */
   }
 }
+
+
+
+
 
 
 
