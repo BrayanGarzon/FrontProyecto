@@ -19,20 +19,20 @@ export class DiscoverComponent {
     autoplay: true,
     autoplayTimeout: 3000,
     autoplayHoverPause: true,
-    margin: 10,
+    margin: 0,
     navSpeed: 600,
     navText: ['&#8249', '&#8250;'],
     responsive: {
       0: {
         items: 1 
       },
-      400: {
+      200: {
         items: 2
       },
-      760: {
+      500: {
         items: 3
       },
-      1000: {
+      700: {
         items: 4
       }
     },
