@@ -1718,13 +1718,15 @@ textarea::placeholder{
 
 /*==================SECTION OF FORM COMMENT====================*/
 
-.formularioComentario .contenedorPadre{
-  width: 1024px;
-  height: 550px;
+.formularioComentario .contenedorPadre {
+  max-width: 1024px;
+  width: 100%;
+  height: auto;
   border-radius: 20px;
-  margin: auto;
+  margin: 20px auto;
   box-shadow: 6px 20px 90px rgb(128, 128, 128);
-  
+  display: flex;
+  flex-wrap: wrap;
 }
 .formularioComentario .tituloComentario{
   display: flex;
@@ -1760,10 +1762,58 @@ textarea::placeholder{
 }
 
 
+/* Media query para dispositivos con pantalla menor a 1070px */
+@media only screen and (max-width: 1069px) {
+  .formularioComentario .contenedorPadre {
+    flex-direction: column;
+  }
+
+  .formularioComentario .infoEstablecimiento {
+    width: 100%;
+  }
+
+  .formularioComentario .formulario {
+    width: 100%;
+    border-radius: 0px;
+  }
+}
 
 
 
+/* Media query para dispositivos con pantalla menor a 670px */
+@media only screen and (max-width: 669px) {
+  .formularioComentario .contenedorPadre{
+    max-width: 350px;
+    width: 100%;
+  }
+  .contenedorComentario{
+    flex-direction: column;
+    
+  }
+  .formularioComentario .tituloComentario .h1comentario{
+    font-size: 35px;
+  }
 
+  .formularioComentario .contenedorPadre .contenedorComentario .infoEstablecimiento {
+    
+    width: 100%;
+  
+  }
+  .tituloComentario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .formularioComentario .form_input--message,
+  .formularioComentario .inputFormularioComentario {
+    height: 40px;
+  }
+  .formularioComentario .contenedorPadre .contenedorComentario .formulario{
+    width: 100%;
+  }
+}
 
 
 
