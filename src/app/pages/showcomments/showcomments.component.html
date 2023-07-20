@@ -21,17 +21,17 @@
         
         <div class="text" style="text-align: justify; margin-top: 4em;">
             <h4>{{ site.description }}</h4>
+            <li>
+                <h2 style="font-size: 15px;"><strong style="font-size: 18px; text-align: left; padding-right: 5px;">Calificacion:</strong>  <i *ngFor="let item of getNumberRange(site.quality)" class="ri-star-line place__rating-icon"></i>
+                </h2>
+                
+                   
+            </li>
             <ul style="margin-top: 2em;">
                 <li>
                     <h2 style="font-size: 15px;"><strong style="font-size: 18px; text-align: left; padding-right: 46px">Precio:</strong> {{ site.price == 0 ? 'Ingreso gratuito' : site.price | currency }}</h2>
                 </li>
 
-                <li>
-                    <h2 style="font-size: 15px;"><strong style="font-size: 18px; text-align: left; padding-right: 5px;">Calificacion:</strong>  <i *ngFor="let item of getNumberRange(site.quality)" class="ri-star-line place__rating-icon"></i>
-                    </h2>
-                    
-                       
-                </li>
                 <li>
                     <h2 style="font-size: 15px;"><strong style="font-size: 18px; text-align: left;  padding-right: 19px;">Dirección:</strong> {{ site.address }}</h2>
                 </li>
@@ -66,9 +66,9 @@
     </div>
     <div class="chat-card">
         <div class="chat-content">
+            <p><!--Puntuacion:--> <i *ngFor="let item of getNumberRange(comment.quality)" class="ri-star-line place__rating-icon"></i></p>
             <h4><!--Usuario:--> {{ comment.user?.fake_name || 'Usuario desconocido' }}</h4>
             <p><!--Mensaje:--> {{ comment.name }}</p>
-            <p><!--Puntuacion:--> <i *ngFor="let item of getNumberRange(comment.quality)" class="ri-star-line place__rating-icon"></i></p>
             <small><!--created at:--> {{ comment.created_at | date:"Y-m-d hh:mm a"}}</small>
         </div>
     </div>

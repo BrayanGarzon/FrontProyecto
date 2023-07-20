@@ -776,8 +776,9 @@ input {
 }
 
 .place__rating-icon {
-  font-size: .75rem;
+  font-size: 1.5rem;
   margin-right: var(--mb-0-25);
+  color: rgb(255, 217, 0);
 }
 
 .place__rating-number {
