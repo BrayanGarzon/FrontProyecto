@@ -58,18 +58,20 @@
 <br><br>
 
 
-<div style="width: 50%; margin: 0 auto; align-items: center; justify-content: center; margin-top: 30px;"
+
+<div  style="width: 50%; margin: 0 auto; align-items: center; justify-content: center; margin-top: 30px;"
     *ngFor="let comment of comments" class="comentario">
 
     <div class="avatar">
         <img src="{{ comment.user?.avatar }}" alt="Avatar">
     </div>
-    <div class="chat-card">
+    <div class="chat-card" >
         <div class="chat-content">
+           
             <p><!--Puntuacion:--> <i *ngFor="let item of getNumberRange(comment.quality)" class="ri-star-line place__rating-icon"></i></p>
-            <h4><!--Usuario:--> {{ comment.user?.fake_name || 'Usuario desconocido' }}</h4>
+            <h4><!--Usuario:--> {{ comment.user?.name || 'Usuario desconocido' }}</h4>
             <p><!--Mensaje:--> {{ comment.name }}</p>
-            <small><!--created at:--> {{ comment.created_at | date:"Y-m-d hh:mm a"}}</small>
+            <small><!--created at:--> {{ comment.created_at | date:"d-M-y hh:mm a"}}</small>
         </div>
     </div>
 </div>
