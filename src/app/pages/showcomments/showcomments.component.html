@@ -57,6 +57,13 @@
 <h3 style="font-size: 30px; width: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-top: 30px;">Comentarios</h3>
 <br><br>
 
+<div style="width: 60%; display: block; margin: 0 auto; align-items: center; justify-content: center; margin-top: 30px;"
+    *ngIf="site">
+
+    <a [routerLink]="['/discover/comment/sites/', site.id]" class="button" style="width: 100%; text-align: center;">Haz
+        un comentario</a>
+        
+</div>
 
 
 <div  style="width: 50%; margin: 0 auto; align-items: center; justify-content: center; margin-top: 30px;"
@@ -70,16 +77,8 @@
            
             <p><!--Puntuacion:--> <i *ngFor="let item of getNumberRange(comment.quality)" class="ri-star-line place__rating-icon"></i></p>
             <h4><!--Usuario:--> {{ comment.user?.name || 'Usuario desconocido' }}</h4>
-            <p><!--Mensaje:--> {{ comment.name }}</p>
-            <small><!--created at:--> {{ comment.created_at | date:"d-M-y hh:mm a"}}</small>
+            <p style="margin-top: 10px;"><!--Mensaje:--> {{ comment.name }}</p>
+            <small style="margin-top: 10px;"><!--created at:--> {{ comment.created_at | date:"d-M-y hh:mm a"}}</small>
         </div>
     </div>
-</div>
-
-<div style="width: 60%; display: block; margin: 0 auto; align-items: center; justify-content: center; margin-top: 30px;"
-    *ngIf="site">
-
-    <a [routerLink]="['/discover/comment/sites/', site.id]" class="button" style="width: 100%; text-align: center;">Haz
-        un comentario</a>
-        
 </div>
