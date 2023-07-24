@@ -1836,9 +1836,23 @@ textarea::placeholder{
 
 
 
+/*=  =*/
+
+.comentario{
+  width: 50%;
+  margin: 0 auto;
+  align-items: center; 
+  justify-content: center; 
+  margin-top: 30px;
+}
 
 
-
+/* Media query para dispositivos con pantalla menor a 670px */
+@media only screen and (max-width: 669px) {
+  .comentario{
+    width: 90%;
+  }
+}
 
 
 
