@@ -59,6 +59,23 @@ li {
   object-fit: cover;
 }
 
+
+.contenedorNombre{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.contenedorNombre h4{
+  font-size: 20px;
+}
+
+
+
+
+
+
+
+
 .social-section {
   text-align: center;
 }

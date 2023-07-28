@@ -196,6 +196,29 @@ input {
   margin-right: 1rem;
 }
 
+.cabeceraSite{
+  margin: auto;
+  width: 1024px;
+  height: 50px;
+  background-color: #1b6270;
+  margin-bottom: -50px;
+  display: flex;
+
+}
+.cabeceraSite .tituloSite{
+  width: 50%;
+  background-color: #1CD9D5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cabeceraSite .tituloCategoria{
+  width: 50%;
+  background-color: #153d3c;
+}
+
+
+
 @media screen and (max-width:770px){
   .container{
     flex-direction: column;
@@ -540,13 +563,13 @@ input {
 .home__info {
   background-color: var(--color-home-isla);
   display: flex;
-  padding: 1.5rem 1rem;
+  padding: 0.5rem 1rem;
   align-items: center;
   column-gap: .5rem;
   position: absolute;
   right: 0;
   bottom: 1rem;
-  width: 228px;
+  width: 200px;
   border-radius: 10px;
 }
 
@@ -778,11 +801,17 @@ input {
 
 /*=estilos para las estrellas=*/
 .place__rating-icon {
+  
   font-size: 1.5rem;
   margin-right: var(--mb-0-25);
-  color: rgb(255, 217, 0);
+  
 }
-
+.place__rating-icon:before {
+  content: "\2B50";
+  font-size: 1rem;
+  margin-right: var(--mb-0-25);
+  
+}
 .place__rating-number {
   font-size: var(--small-font-size);
 }
@@ -2104,9 +2133,12 @@ textarea::placeholder{
     grid-template-rows: 2fr .5fr;
   }
   .home__info {
-    width: 328px;
+    width: 190px;
     grid-template-columns: 1fr 2fr;
     column-gap: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .home__info-title {
     font-size: var(--normal-font-size);

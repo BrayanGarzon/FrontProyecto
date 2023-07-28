@@ -6,6 +6,9 @@ import { Comment } from 'src/app/interfaces/discover/comment.interface';
 import { CommentsService } from 'src/app/services/discover/comments.service';
 import { SitesService } from 'src/app/services/discover/sites.service';
 
+import { CategoriesService } from 'src/app/services/discover/categories.service';
+import { Category } from 'src/app/interfaces/discover/category.interface';
+
 
 
 @Component({
@@ -14,7 +17,7 @@ import { SitesService } from 'src/app/services/discover/sites.service';
   styleUrls: ['./showcomments.component.css']
 })
 export class ShowcommentsComponent {
-
+  
   private siteId: string | null;
   site: any;
   comments: Comment[] = [];
@@ -98,3 +101,5 @@ export class ShowcommentsComponent {
     return Helper.getNumberRange(1, end);
   }
 }
+
+

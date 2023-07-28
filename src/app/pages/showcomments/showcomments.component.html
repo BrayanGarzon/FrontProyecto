@@ -10,7 +10,14 @@
     <br><br>
     <hr style="max-width: 1024px; background-color: #14505C; margin: auto;"> <!--linea-->
 
+    <div class="cabeceraSite">
+        <div class="tituloSite"><h2>{{ site.name }}</h2></div>
+        <div class="tituloCategoria"><h2>  </h2></div>
+
+    </div>
+
     <div class="container">
+        
         <div class="image">
             <div class="place__container container grid">
                 <div class="place__card" *ngFor="let image of site.site_images">
@@ -68,14 +75,21 @@
 
 <div  *ngFor="let comment of comments" class="comentario">
 
-    <div class="avatar">
-        <img src="{{ comment.user?.avatar }}" alt="Avatar">
-    </div>
+    
     <div class="chat-card" >
         <div class="chat-content">
-           
-            <p><!--Puntuacion:--> <i *ngFor="let item of getNumberRange(comment.quality)" class="ri-star-line place__rating-icon"></i></p>
-            <h4><!--Usuario:--> {{ comment.user?.name || 'Usuario desconocido' }}</h4>
+            <div class="contenedorNombre">
+                <div class="avatar">
+                    <img src="{{ comment.user?.avatar }}" alt="Avatar">
+                </div>
+                <h4><!--Usuario:--> {{ comment.user?.name || 'Usuario desconocido' }}</h4>
+            </div>
+            
+            <div class="rating-section">
+                <p><!--Puntuacion:--> <i *ngFor="let item of getNumberRange(comment.quality)" class="ri-star-line place__rating-icon"></i></p>
+            </div>
+            
+            
             <p style="margin-top: 10px; text-align: justify;"><!--Mensaje:--> {{ comment.name }}</p>
             <small style="margin-top: 10px;"><!--created at:--> {{ comment.created_at | date:"d-M-y hh:mm a"}}</small>
         </div>
