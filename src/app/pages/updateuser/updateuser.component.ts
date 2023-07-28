@@ -16,6 +16,7 @@ export class UpdateuserComponent {
     name: '',
     email: '',
     password: '',
+    fake_name: '',
     phone:'',
   };
 
