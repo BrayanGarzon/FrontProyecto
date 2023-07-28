@@ -6,5 +6,5 @@ export interface Site {
     quality:  string;
     category: number;
     image:    string;
-    price:    string
+    price:    number;
 }

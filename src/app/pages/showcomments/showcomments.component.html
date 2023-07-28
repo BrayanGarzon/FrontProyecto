@@ -1,18 +1,14 @@
 <div *ngIf="site">
     
     <br><br><br><br>
-    <div
-        style="width: auto; margin: 0 auto; text-align: center; margin-top: 20px; font-size: 30px;">
-        <h2>{{ site.name }}</h2>
 
-    </div>
 
     <br><br>
     <hr style="max-width: 1024px; background-color: #14505C; margin: auto;"> <!--linea-->
 
     <div class="cabeceraSite">
         <div class="tituloSite"><h2>{{ site.name }}</h2></div>
-        <div class="tituloCategoria"><h2>  </h2></div>
+        <div class="tituloCategoria"><h2>{{ site.category.name }}</h2></div>
 
     </div>
 

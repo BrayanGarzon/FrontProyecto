@@ -214,7 +214,17 @@ input {
 }
 .cabeceraSite .tituloCategoria{
   width: 50%;
-  background-color: #153d3c;
+  color: white;
+
+}
+
+.tituloCategoria{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tituloCategoria h2 {
+  color: white;
 }
 
 

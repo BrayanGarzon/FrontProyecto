@@ -24,7 +24,9 @@
                         <h3 class="place__title">{{ site.name }}</h3>
                     </a>
                     <span class="place__subtitle">{{ site.location }}</span>
-                    <span class="place__price" >{{ site.price | currency }}</span>
+                    <span *ngIf="site.price >0" class="place__price" >{{ site.price | currency }}</span>
+                    <span *ngIf="site.price ==0" class="place__price" >Gratis</span>
+
                 </div>
             </div>
             <a [routerLink]="['/discover/comments/show/', site.id]">
