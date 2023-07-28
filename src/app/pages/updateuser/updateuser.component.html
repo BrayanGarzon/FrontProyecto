@@ -48,6 +48,11 @@
             <form id="formulario" (ngSubmit)="saveRegister()" [formGroup]="formRegister" class="formUpdateUser"
                 method="POST">
 
+                <label style="margin-left: 5px; color: #787f8a;">
+                    Imagen de perfil
+               </label>
+               <input  type="file" class="inputFormularioRegistro" name="avatar" id="avatar" accept="image/png, image/gif, image/jpeg"  required>
+
                 <input type="text" placeholder="Nombres" formControlName="name" [(ngModel)]="user.name" class="updateaUser__input" name="name"
                     id="name" required>
                 <small
@@ -60,6 +65,12 @@
                 <small
                     *ngIf="formRegister.controls['email'].errors?.['required'] && formRegister.controls['email'].touched"
                     class="p-error block" style="color: red;">Es necesario que ingreses el correo</small>
+
+                <input type="text" formControlName="phone" placeholder="Numero Telefonico" class="inputFormularioRegistro" name="phone"
+                    id="phone" maxlength="10" required>
+                <small
+                    *ngIf="formRegister.controls['phone'].errors?.['required'] && formRegister.controls['phone'].touched"
+                    class="p-error block" style="color: red;">Ingresa tu telefono</small>
                 
 
                 <input type="password" formControlName="password" name="password" placeholder="Contraseña"

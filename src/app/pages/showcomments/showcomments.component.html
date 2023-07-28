@@ -1,14 +1,23 @@
 <div *ngIf="site">
     
     <br><br><br><br>
-
-
     <br><br>
-    <hr style="max-width: 1024px; background-color: #14505C; margin: auto;"> <!--linea-->
+
+    
 
     <div class="cabeceraSite">
-        <div class="tituloSite"><h2>{{ site.name }}</h2></div>
-        <div class="tituloCategoria"><h2>{{ site.category.name }}</h2></div>
+        <div class="tituloSite">   
+            <h2 class="sineName">{{ site.name }}</h2>
+            <li class="calificacionLi">
+                <h2 style="font-size: 15px;" class="calificacion"><strong style="font-size: 20px; text-align: left; padding-right: 5px;"></strong>  <i *ngFor="let item of getNumberRange(site.quality)" class="ri-star-line place__rating-icon"></i>
+                </h2>
+                
+                   
+            </li>
+        </div>
+        <div class="tituloCategoria">
+            <h2>{{ site.category.name }}</h2>
+        </div>
 
     </div>
 
@@ -24,12 +33,14 @@
         
         <div class="text" style="text-align: justify; margin-top: 4em;">
             <h4>{{ site.description }}</h4>
+            <!--
             <li>
                 <h2 style="font-size: 15px;"><strong style="font-size: 18px; text-align: left; padding-right: 5px;">Calificacion:</strong>  <i *ngFor="let item of getNumberRange(site.quality)" class="ri-star-line place__rating-icon"></i>
                 </h2>
                 
                    
             </li>
+            -->
             <ul style="margin-top: 2em;">
                 <li>
                     <h2 style="font-size: 15px;"><strong style="font-size: 18px; text-align: left; padding-right: 46px">Precio:</strong> {{ site.price == 0 ? 'Ingreso gratuito' : site.price | currency }}</h2>

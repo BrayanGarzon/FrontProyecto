@@ -16,13 +16,14 @@ export class UpdateuserComponent {
     name: '',
     email: '',
     password: '',
-    fake_name: ''
+    phone:'',
   };
 
   formRegister: FormGroup = this.fb.group({
     email: [, [Validators.required, Validators.email]],
     name: [, Validators.required],
-    password: [, [Validators.required]]
+    password: [, [Validators.required]],
+    phone: [, [Validators.required]]
   })
 
   constructor(private fb: FormBuilder, private authservice: AuthService, private router: Router) {
