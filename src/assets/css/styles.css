@@ -2283,7 +2283,11 @@ textarea::placeholder{
 }
 
 .avatarUsuario {
-  background-color: #11414B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: #11414B 4px solid;
   border-radius: 100%;
   width: 200px;
   height: 200px;

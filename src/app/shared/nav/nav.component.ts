@@ -16,13 +16,9 @@ export class NavComponent {
     if (token) {
       this.authService.authMe(token).subscribe( resp => {
         this.isLogged = true;
-        console.log(this.isLogged);
-        console.log(resp);
-        
         localStorage.setItem('user_id', resp.id)
       }, error => {
         this.isLogged = false
-        console.log(this.isLogged);
       })
     }
   }

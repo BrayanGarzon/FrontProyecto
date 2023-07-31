@@ -33,7 +33,6 @@ export class UpdateuserComponent {
   getMe() {
     this.authservice.authMe(null).subscribe( resp => {
       this.user = resp;
-      console.log(this.user);
     } )
   }
 

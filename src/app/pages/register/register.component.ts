@@ -60,8 +60,6 @@ export class RegisterComponent {
     formData.append('nationality', this.formRegister.get('nationality')?.value);
     formData.append('gender', this.formRegister.get('gender')?.value);
 
-    console.log(formData.getAll("email"));
-    console.log(formData.getAll("avatar"));
     
 
     this.authservice.authRegister(formData).subscribe(response => {

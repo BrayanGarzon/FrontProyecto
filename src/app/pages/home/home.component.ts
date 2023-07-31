@@ -19,7 +19,6 @@ export class HomeComponent {
     this.recommendedService.getRecommended()
       .subscribe(response=> {
         this.recommended = response
-        console.log(response);
         
       })
   }

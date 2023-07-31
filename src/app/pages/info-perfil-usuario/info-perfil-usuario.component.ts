@@ -15,8 +15,11 @@ user: any;
 
 
 
+
   constructor(private userService: UserService){
-    this.userService.getUserData().subscribe(data => this.user=data)
+    this.userService.getUserData().subscribe(data => {
+      this.user=data;
+    })
   }
 }
 

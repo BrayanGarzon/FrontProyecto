@@ -1,19 +1,19 @@
 <br><br><br>
 <br>
 
-<div class="contenedorInfoUsuario">
-    <div class="avatarUsuario">
-        <img src="{{user.avatar}}" alt="" ngIf="user.avatar!=''">
+<div class="contenedorInfoUsuario" *ngIf="user != null" >
+    <div class="avatarUsuario" style="padding: 5px;">
+        <img  style=" border-radius: 100%; " src="{{ user?.avatar }}" alt="avatar">
     </div>
     
     <div class="contenidoUsuario">
 
         <div class="infoUsuario">
-            <h4 class="atributosUsuario">Nombre: {{user.name}}</h4>
-            <h4 class="atributosUsuario">Telefono: {{user.phone}}</h4>
-            <h4 class="atributosUsuario">Email: {{user.email}}</h4>
-            <h4 class="atributosUsuario">Nacionaldiad: {{user.nationality}}</h4>
-            <h4 class="atributosUsuario">Genero: {{user.gender}}</h4>
+            <h4 *ngIf="user.name != null" class="atributosUsuario"> Nombre:  {{user?.name}}</h4>
+            <h4  class="atributosUsuario"> Telefono: {{user?.phone}}</h4>
+            <h4  class="atributosUsuario">Correo:  {{user?.email}}</h4>
+            <h4 class="atributosUsuario">Nacionalidad: {{user?.nationality}}</h4>
+            <h4  class="atributosUsuario">Genero: {{user?.gender}}</h4>
         </div>
 
 
@@ -24,6 +24,12 @@
 
     </div>
     
+</div>
+
+<div *ngIf="user == null" style="display: flex; justify-content: center; align-items: center; height: 200px ;">
+    <div class="container">
+        <div class="circular-progress"></div>
+      </div>
 </div>
 
 <br><br><br>

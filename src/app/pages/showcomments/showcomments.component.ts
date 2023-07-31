@@ -56,17 +56,14 @@ export class ShowcommentsComponent {
   getSite(siteId: string) {
     this.sitesService.getSiteById(siteId).subscribe(response => {
       this.site = response;
-      console.log(this.site.site_images);
       
     })
   }
 
   getCommentsBySite(siteId: string) {
     this.commentsService.getCommentsBySite(siteId).subscribe((response: Comment[]) => {
-      console.log(response);
 
       this.comments = response;
-      console.log(this.comments);
 
     })
   }

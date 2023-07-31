@@ -19,9 +19,7 @@ export class SitesService {
     return this.http.get<Site[]>(`${API_URL}/location/sites/${siteId}/`);
   }
 
-  getSites(query: string = "", category: string = "") {
-    console.log(`${API_URL}/location/sites/?name=${query}&category_id=${category}`);
-    
+  getSites(query: string = "", category: string = "") {    
     return this.http.get<Site[]>(`${API_URL}/location/sites/?name=${query}&category_id=${category}`);
   }
 }

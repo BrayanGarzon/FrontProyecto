@@ -40,8 +40,6 @@ export class AuthService {
   authLogin(auth: Auth): Observable<any> {
     return this.http.post<any>(`${API_URL}/users/token/`, auth).pipe(
       map(response => {
-        console.log(response);
-
         localStorage.setItem('token', response.token)
         return response
       })
