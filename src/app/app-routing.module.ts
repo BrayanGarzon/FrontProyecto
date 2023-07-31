@@ -13,6 +13,9 @@ import { ShowcommentsComponent } from './pages/showcomments/showcomments.compone
 import { ShowsitesComponent } from './pages/showsites/showsites.component';
 import { UpdateuserComponent } from './pages/updateuser/updateuser.component';
 
+import { CreditosComponent } from './pages/creditos/creditos.component';
+import { InfoPerfilUsuarioComponent } from './pages/info-perfil-usuario/info-perfil-usuario.component';
+
 const routes: Routes = [
   // { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "", component: HomeComponent },
@@ -25,6 +28,8 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "update/user", component: UpdateuserComponent, canActivate: [AuthGuard] },
   { path: "register", component: RegisterComponent },
+  { path: "creditos", component: CreditosComponent },
+  { path: "infoPerfilUsuario", component: InfoPerfilUsuarioComponent},
   { path: "**", component: Error404Component },
 ];
 

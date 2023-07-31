@@ -6,8 +6,7 @@ import { Comment } from 'src/app/interfaces/discover/comment.interface';
 import { CommentsService } from 'src/app/services/discover/comments.service';
 import { SitesService } from 'src/app/services/discover/sites.service';
 
-import { CategoriesService } from 'src/app/services/discover/categories.service';
-import { Category } from 'src/app/interfaces/discover/category.interface';
+
 
 
 

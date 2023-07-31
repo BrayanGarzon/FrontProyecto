@@ -1,0 +1,30 @@
+<br><br><br>
+<br>
+
+<div class="contenedorInfoUsuario">
+    <div class="avatarUsuario">
+        <img src="{{user.avatar}}" alt="" ngIf="user.avatar!=''">
+    </div>
+    
+    <div class="contenidoUsuario">
+
+        <div class="infoUsuario">
+            <h4 class="atributosUsuario">Nombre: {{user.name}}</h4>
+            <h4 class="atributosUsuario">Telefono: {{user.phone}}</h4>
+            <h4 class="atributosUsuario">Email: {{user.email}}</h4>
+            <h4 class="atributosUsuario">Nacionaldiad: {{user.nationality}}</h4>
+            <h4 class="atributosUsuario">Genero: {{user.gender}}</h4>
+        </div>
+
+
+        <div class="rutaActualizar">
+            <a [routerLink]="['/update/user']" href="">Actualzar perfil</a>
+        </div>
+        
+
+    </div>
+    
+</div>
+
+<br><br><br>
+<br><br><br>

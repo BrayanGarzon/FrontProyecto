@@ -18,6 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShowcommentsComponent } from './showcomments/showcomments.component';
 import { ShowsitesComponent } from './showsites/showsites.component';
 import { UpdateuserComponent } from './updateuser/updateuser.component';
+import { CreditosComponent } from './creditos/creditos.component';
+import { InfoPerfilUsuarioComponent } from './info-perfil-usuario/info-perfil-usuario.component';
 
 
 @NgModule({
@@ -34,6 +36,8 @@ import { UpdateuserComponent } from './updateuser/updateuser.component';
     ShowcommentsComponent,
     ShowsitesComponent,
     UpdateuserComponent,
+    CreditosComponent,
+    InfoPerfilUsuarioComponent,
   ],
   imports: [
     CommonModule,
