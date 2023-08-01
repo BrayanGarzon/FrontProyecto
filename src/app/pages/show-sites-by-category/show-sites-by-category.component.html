@@ -1,0 +1,37 @@
+<br><br><br><br>
+<br><br>
+<div class="subscribe__input_lupa-container">
+
+    <input type="text" placeholder=" Buscar sitio" class="subscribe__input_lupa" [(ngModel)]="filtro"
+        (keyup)="filter()">
+</div>
+<div *ngIf="sites.length > 0" class="place__container container grid">
+
+
+    <!--==================== PLACES CARD 1 ====================-->
+
+    <div class="place__card" *ngFor="let site of sites">
+        <img src="{{ site.image }}" alt="" class="place__img">
+
+        <div class="place__content">
+            <span class="place__rating">
+                <i *ngFor="let item of getNumberRange(site.quality)" class="ri-star-line place__rating-icon"></i>
+            </span>
+
+            <div class="place__data">
+                <a [routerLink]="['/discover/comments/show/', site.id]">
+                    <h3 class="place__title">{{ site.name }}</h3>
+                </a>
+                <span class="place__subtitle">{{ site.location }}</span>
+                <span *ngIf="site.price >0" class="place__price">{{ site.price | currency }}</span>
+                <span *ngIf="site.price ==0" class="place__price">Gratis</span>
+
+            </div>
+        </div>
+        <a [routerLink]="['/discover/comments/show/', site.id]">
+            <button class="button button--flex place__button">
+                <i class="ri-chat-forward-line"></i>
+            </button>
+        </a>
+    </div>
+</div>

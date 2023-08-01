@@ -1,5 +1,5 @@
 <section class="discover section" id="discover">
-    <h2 class="section__title">Conoce Lo Más <br> Valorado</h2>
+   <!-- <h2 class="section__title">Conoce Lo Más <br> Valorado</h2>
 
     <div class="discover__container container swiper-container">
         
@@ -7,7 +7,6 @@
         <owl-carousel-o [options]="customOptions">
             <ng-template carouselSlide *ngFor="let category of categories">
                 <div class="slide" (click)="updateCategory(category)">
-                    <!--<img src="{{ category.image }}" alt="{{ category.name }}">-->
                     <button class="category-button"
                         style="width: auto; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-top: 30px;">
                         <h1 style="color: white;">{{ category.name }}</h1>
@@ -19,10 +18,11 @@
         </owl-carousel-o>
 
 
-    </div>
+    </div> -->
     
 
 </section>
 
 
-<app-showsites [category]="category"></app-showsites>
+<app-showsites *ngIf="category != null" [category]="category"></app-showsites>
+<app-show-sites-category *ngIf="category == null" />

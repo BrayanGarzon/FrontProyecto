@@ -1,8 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { Category } from 'src/app/interfaces/discover/category.interface';
+import { Category, SitesCategory } from 'src/app/interfaces/discover/category.interface';
 import { CategoriesService } from 'src/app/services/discover/categories.service';
 import { ShowsitesComponent } from '../showsites/showsites.component';
+import { SitesService } from 'src/app/services/discover/sites.service';
+import { Site } from 'src/app/interfaces/discover/site.interface';
 
 
 
@@ -39,13 +41,13 @@ export class DiscoverComponent {
     nav: true
   }
 
-  category!: Category;
+  category: Category | null = null ;
+
 
   categories!: Category[];
   @ViewChild(ShowsitesComponent) showsitesComponent?: ShowsitesComponent;
 
-  constructor(private categoriesService: CategoriesService) {
-    this.getCategories()
+  constructor( private sitesService: SitesService,  private categoriesService: CategoriesService) {
   }
 
   getCategories() {
@@ -53,6 +55,8 @@ export class DiscoverComponent {
       this.categories = categories;
     })
   }
+
+
 
   updateCategory(category: Category) {
     this.category = category;
