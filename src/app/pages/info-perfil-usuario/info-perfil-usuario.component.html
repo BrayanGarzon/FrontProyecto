@@ -10,10 +10,10 @@
 
         <div class="infoUsuario">
             <h4 *ngIf="user.name != null" class="atributosUsuario"> Nombre:  {{user?.name}}</h4>
-            <h4  class="atributosUsuario"> Telefono: {{user?.phone}}</h4>
-            <h4  class="atributosUsuario">Correo:  {{user?.email}}</h4>
-            <h4 class="atributosUsuario">Nacionalidad: {{user?.nationality}}</h4>
-            <h4  class="atributosUsuario">Genero: {{user?.gender}}</h4>
+            <h4  *ngIf="user.phone != null" class="atributosUsuario"> Telefono: {{user?.phone}}</h4>
+            <h4  *ngIf="user.email != null" class="atributosUsuario">Correo:  {{user?.email}}</h4>
+            <h4 *ngIf="user.nationality != null" class="atributosUsuario">Nacionalidad: {{user?.nationality}}</h4>
+            <h4  *ngIf="user.gender != null" class="atributosUsuario">Genero: {{user?.gender}}</h4>
         </div>
 
 

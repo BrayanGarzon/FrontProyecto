@@ -2263,13 +2263,12 @@ textarea::placeholder{
 
 
 
-/*= SECTION PAGE CREDITS =*/
 
 
 
 
 
-/*= SECTION PAGE INFORUSUARIO =*/
+
 /*= SECTION PAGE INFORUSUARIO =*/
 
 .contenedorInfoUsuario {
@@ -2321,9 +2320,19 @@ textarea::placeholder{
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
-
-
+.contenedorInfoUsuario .contenidoUsuario .rutaActualizar a{
+  text-decoration: none;
+  color: #11414B;
+  font-weight: bold;
+  
+}
+.contenedorInfoUsuario .contenidoUsuario .rutaActualizar a:hover{
+  text-decoration: none;
+  color: #247889;
+  font-weight: bold;
+}
 
 /* Estilos para pantallas pequeñas */
 @media screen and (max-width: 768px) {
@@ -2335,3 +2344,80 @@ textarea::placeholder{
       max-width: 100%;
   }
 }
+
+
+
+
+
+/*= SECTION PAGE CREDITS =*/
+.contenedorCreditos{
+  width: 1024px;
+  height: 950px;
+  margin: auto;
+  background-color: #1CD9D5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.contenedorCreditos .descripcionProyecto{
+  width: 100%;
+  height: 400px;
+  background: rgb(228, 244, 157);
+  margin: 10px;
+}
+
+
+.contenedorCreditos .contenedorFrameworks{
+  width: 100%;
+  height: 200px;
+  background: rgb(112, 96, 96);
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.contenedorCreditos .contenedorFrameworks .frameworks{
+  height: 180px;
+  width: 180px;
+  margin: 5px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contenedorCreditos .contenedorFrameworks .frameworks img{
+  margin: 5px;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+
+
+.contenedorCreditos .contenedorFrameworksBack{
+  width: 100%;
+  height: 200px;
+  background: rgb(247, 154, 154);
+  margin: 10px;
+}
+.contenedorCreditos .contenedorFrameworks .frameworks img{
+  margin: 5px;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
