@@ -1,10 +1,12 @@
+import { Category } from "./category.interface";
+
 export interface Site {
     id:       number;
     name:     string;
     url:      string;
     location: string;
     quality:  string;
-    category: number;
+    category: Category;
     image:    string;
     price:    number;
 }

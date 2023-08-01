@@ -20,6 +20,8 @@ import { ShowsitesComponent } from './showsites/showsites.component';
 import { UpdateuserComponent } from './updateuser/updateuser.component';
 import { CreditosComponent } from './creditos/creditos.component';
 import { InfoPerfilUsuarioComponent } from './info-perfil-usuario/info-perfil-usuario.component';
+import { ShowSitesCategoryComponent } from './show-sites-category/show-sites-category.component';
+import { ShowSitesByCategoryComponent } from './show-sites-by-category/show-sites-by-category.component';
 
 
 @NgModule({
@@ -38,6 +40,8 @@ import { InfoPerfilUsuarioComponent } from './info-perfil-usuario/info-perfil-us
     UpdateuserComponent,
     CreditosComponent,
     InfoPerfilUsuarioComponent,
+    ShowSitesCategoryComponent,
+    ShowSitesByCategoryComponent,
   ],
   imports: [
     CommonModule,

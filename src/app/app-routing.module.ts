@@ -15,11 +15,14 @@ import { UpdateuserComponent } from './pages/updateuser/updateuser.component';
 
 import { CreditosComponent } from './pages/creditos/creditos.component';
 import { InfoPerfilUsuarioComponent } from './pages/info-perfil-usuario/info-perfil-usuario.component';
+import { ShowSitesByCategoryComponent } from './pages/show-sites-by-category/show-sites-by-category.component';
 
 const routes: Routes = [
   // { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "", component: HomeComponent },
   { path: "discover", component: DiscoverComponent },
+  { path: "categoria/:id", component: ShowSitesByCategoryComponent },
+
   // { path: "discover/sites", component: ShowsitesComponent },
   // { path: "discover/sites/:category_id", component: SitesComponent },
   { path: "discover/comments/show/:site_id", component: ShowcommentsComponent },
