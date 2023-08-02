@@ -3,7 +3,9 @@
 
     <!--==================== PLACES CARD 1 ====================-->
     <div *ngFor="let cat of sitesCategory">
-        <h1> {{ cat.name }}</h1>
+        <a [routerLink]="['/categoria/' + cat.id]"><h1> {{ cat.name }}  </h1></a>
+
+        
 
         <div style="display: flex;" >
             <div  class="place__card "  *ngFor="let site of cat.sites">
