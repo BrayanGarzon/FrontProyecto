@@ -1,11 +1,11 @@
-<br><br><br><br>
-<br><br>
+
+<h2 class="section__title" style="font-size: 35px; margin-top: 150px;">¡Visita lo que más te <br> Guste!</h2>
 <div class="subscribe__input_lupa-container">
 
     <input type="text" placeholder=" Buscar sitio" class="subscribe__input_lupa" [(ngModel)]="filtro"
-        (keyup)="filter()">
+        (keyup)="filter()" style="padding: 15px;">
 </div>
-<div *ngIf="sites.length > 0" class="place__container container grid">
+<div *ngIf="sites.length > 0" class="place__container container grid " style="margin-bottom: 100px;">
 
 
     <!--==================== PLACES CARD 1 ====================-->

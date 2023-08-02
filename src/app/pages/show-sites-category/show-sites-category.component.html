@@ -3,7 +3,11 @@
 
     <!--==================== PLACES CARD 1 ====================-->
     <div *ngFor="let cat of sitesCategory">
-        <a [routerLink]="['/categoria/' + cat.id]"><h1> {{ cat.name }}  </h1></a>
+        <div style="display: flex;  align-items: center; margin: 3px; margin-top: 30px;">
+            <a [routerLink]="['/categoria/' + cat.id]"><h1> {{ cat.name }}  </h1></a>
+            <a [routerLink]="['/categoria/' + cat.id]" style="margin-top: 10px; margin-left: 9px; text-decoration: none; color: #11414B; cursor: pointer;">Ver Más</a>
+        </div>
+        
 
         
 
