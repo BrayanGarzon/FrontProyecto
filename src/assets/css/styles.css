@@ -2351,73 +2351,275 @@ textarea::placeholder{
 
 /*= SECTION PAGE CREDITS =*/
 .contenedorCreditos{
-  width: 1024px;
-  height: 950px;
+  max-width: 1030px;
+  height: auto;
   margin: auto;
-  background-color: #1CD9D5;
+  
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .contenedorCreditos .descripcionProyecto{
-  width: 100%;
-  height: 400px;
-  background: rgb(228, 244, 157);
+  width: auto;
+  height: 300px;
+  margin: 15px;
+  color: #11414B;
+}
+.contenedorCreditos .descripcionProyecto p{
+  text-align: justify;
   margin: 10px;
+  font-size: 18px;
 }
 
+
+
+.contenedorCreditos .contenedorFrameworks .frameworks, .frameworksBack{
+  height: 134px;
+  width: 130px;
+  margin: 10px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #11414B solid 1px;
+}
 
 .contenedorCreditos .contenedorFrameworks{
   width: 100%;
   height: 200px;
-  background: rgb(112, 96, 96);
-  margin: 10px;
   display: flex;
   align-items: center;
-  overflow: hidden;
-}
-.contenedorCreditos .contenedorFrameworks .frameworks{
-  height: 180px;
-  width: 180px;
-  margin: 5px;
-  background: white;
-  display: flex;
   justify-content: center;
-  align-items: center;
+  position: relative;
 }
+.contenedorCreditos .contenedorFrameworks .frameworks {
+  /* ... Tus estilos existentes ... */
+  position: relative; /* Agregamos posición relativa para que funcione el posicionamiento absoluto */
+  overflow: hidden; /* Ocultamos el contenido que se desborda */
+  transition: transform 0.3s ease; /* Transición en la propiedad 'transform' para suavizar la animación */
+}
+
 .contenedorCreditos .contenedorFrameworks .frameworks img{
-  margin: 5px;
+  
   width: auto;
   height: auto;
   overflow: hidden;
+  transition: transform 0.3s ease;
 }
+/* Pseudo-clase :hover para aplicar la animación al pasar el cursor sobre el div */
+.contenedorCreditos .contenedorFrameworks .frameworks:hover {
+  transform: scale(1.1); /* Escalamos el div al 110% en la animación al pasar el cursor */
+}
+
+/* Pseudo-clase :hover para aplicar la animación al pasar el cursor sobre la imagen */
+.contenedorCreditos .contenedorFrameworks .frameworks:hover img {
+  transform: scale(1.2); /* Escalamos la imagen al 120% en la animación al pasar el cursor */
+  
+}
+
 
 
 .contenedorCreditos .contenedorFrameworksBack{
   width: 100%;
   height: 200px;
-  background: rgb(247, 154, 154);
-  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
 }
-.contenedorCreditos .contenedorFrameworks .frameworks img{
-  margin: 5px;
+.contenedorCreditos .contenedorFrameworksBack .frameworksBack {
+  /* ... Tus estilos existentes ... */
+  position: relative; /* Agregamos posición relativa para que funcione el posicionamiento absoluto */
+  overflow: hidden; /* Ocultamos el contenido que se desborda */
+  transition: transform 0.3s ease; /* Transición en la propiedad 'transform' para suavizar la animación */
+}
+.contenedorCreditos .contenedorFrameworks .frameworksBack img{
+  
   width: auto;
   height: auto;
   overflow: hidden;
+  transition: transform 0.3s ease;
+}
+/* Pseudo-clase :hover para aplicar la animación al pasar el cursor sobre el div */
+.contenedorCreditos .contenedorFrameworksBack .frameworksBack:hover {
+  transform: scale(1.1); /* Escalamos el div al 110% en la animación al pasar el cursor */
+}
+
+/* Pseudo-clase :hover para aplicar la animación al pasar el cursor sobre la imagen */
+.contenedorCreditos .contenedorFrameworksBack .frameworksBack:hover img {
+  transform: scale(1.2); /* Escalamos la imagen al 120% en la animación al pasar el cursor */
+  
+}
+
+.contenedorCreditos .subtitulosCreditos{
+  margin-top: 30px;
 }
 
 
 
 
+.contenedorCreditos .equipo{
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedorCreditos .equipo .imagenEquipoDesarrolladores, .imagenEquipoMentores{
+  width: auto;
+  height: 250px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.contenedorCreditos .equipo .imagenEquipoDesarrolladores img{
+  width: auto;
+  height: auto;
+  background: #F6F9F9;
+  padding: 5px;
+  margin: 2px;
+}
+
+.contenedorCreditos .equipo .imagenEquipoMentores img{
+  width: auto;
+  height: auto;
+  background: #F6F9F9;
+  padding: 5px;
+  margin: 2px;
+}
 
 
 
+/* Agrega texto encima de las imágenes */
+.contenedorCreditos .equipo .imagenEquipoDesarrolladores,
+.contenedorCreditos .equipo .imagenEquipoMentores {
+  position: relative;
+}
+
+.contenedorCreditos .equipo .textoEncimaImagen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 18px;
+  opacity: 0; /* Oculta el texto inicialmente */
+  transition: opacity 0.3s ease; /* Agrega una transición suave */
+  text-align: center;
+  flex-direction: column;
+}
+
+/* Muestra el texto cuando el cursor está encima */
+.contenedorCreditos .equipo .imagenEquipoDesarrolladores:hover .textoEncimaImagen,
+.contenedorCreditos .equipo .imagenEquipoMentores:hover .textoEncimaImagen {
+  opacity: 1;
+}
+
+.contenedorCreditos .equipo .textoEncimaImagen a{
+  text-decoration: none;
+  color: #1CD9D5;
+  font-weight: bold;
+}
 
 
+/*= SECCIÓN CRÉDITOS DE LA PÁGINA =*/
+
+/* Añadir media query para pantallas más pequeñas */
+@media screen and (max-width: 955px) {
+  .contenedorCreditos .contenedorFrameworks,
+  .contenedorCreditos .contenedorFrameworksBack {
+    margin-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+  }
+
+  .contenedorCreditos .contenedorFrameworks .frameworks,
+  .contenedorCreditos .contenedorFrameworksBack .frameworksBack {
+    width: 130px;
+    margin: 10px;
+    
+  }
 
 
+}
+
+/* Añadir media query para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  .contenedorCreditos {
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+
+  .contenedorCreditos .descripcionProyecto {
+    height: auto;
+  }
+
+  .contenedorCreditos .contenedorFrameworks,
+  .contenedorCreditos .contenedorFrameworksBack {
+    height: auto;
+  }
+
+  .contenedorCreditos .equipo {
+    flex-direction: column;
+  }
+
+  .contenedorCreditos .equipo .imagenEquipoDesarrolladores,
+  .contenedorCreditos .equipo .imagenEquipoMentores {
+    width: 60%;
+    height: 250px;
+    
+  }
+}
+
+.contenedorCreditos {
+  max-width: 1030px;
+  margin: 50px auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contenedorCreditos .descripcionProyecto {
+  width: 100%;
+  height: auto;
+  margin: 15px;
+  padding: 10px;
+}
+
+.contenedorCreditos .descripcionProyecto p {
+  text-align: justify;
+  margin: 10px;
+  font-size: 18px;
+}
 
 
+/* Los demás estilos CSS permanecen sin cambios. */
+
+
+@media screen and (max-width: 480px) {
+  .contenedorCreditos .equipo .imagenEquipoDesarrolladores,
+  .contenedorCreditos .equipo .imagenEquipoMentores {
+    width: 90%;
+    height: 250px;
+    
+  }
+}
 
