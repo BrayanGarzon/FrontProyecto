@@ -801,16 +801,6 @@ input {
   height: 230px;
 }
 
-.place__container {
-  grid-template-columns: repeat(2, max-content);
-  justify-content: center;
-}
-
-.place__container_image {
-  grid-template-columns: repeat(2, max-content);
-  justify-content: center;
-}
-
 .place__card {
   position: relative;
   overflow: var(--img-hidden);
@@ -2012,20 +2002,10 @@ textarea::placeholder{
 
 
 
-
-
-
-
-
-
-
 /*=============== MEDIA QUERIES ===============*/
 /* For small devices */
 @media screen and (max-width: 340px) {
-  .place__container {
-    grid-template-columns: max-content;
-    justify-content: center;
-  }
+  
   .home__info {
     width: 190px;
     padding: 1rem;
@@ -2042,9 +2022,7 @@ textarea::placeholder{
     grid-template-columns: .6fr;
     justify-content: center;
   }
-  .place__container {
-    grid-template-columns: repeat(4, max-content);
-  }
+  
   .subscribe__form {
     width: 470px;
     margin: 0 auto;
@@ -2058,9 +2036,7 @@ textarea::placeholder{
     grid-template-columns: .6fr;
     justify-content: center;
   }
-  .place__container {
-    grid-template-columns: repeat(5, max-content);
-  }
+  
   .subscribe__form {
     width: 470px;
     margin: 0 auto;
@@ -2155,8 +2131,7 @@ textarea::placeholder{
     margin-left: auto;
     margin-right: auto;
   }
-  .discover__container,
-  .place__container {
+  .discover__container {
     padding-top: 2rem;
   }
 
@@ -2226,9 +2201,7 @@ textarea::placeholder{
   .video__description {
     padding: 0 8rem;
   }
-  .place__container {
-    gap: 3rem 0rem;
-  }
+ }
   .place__card, .place__img {
     height: 284px;
     margin: 1px;
@@ -2237,7 +2210,6 @@ textarea::placeholder{
   .footer__content {
     justify-items: center;
   }
-}
 
 @media screen and (min-width: 1200px) {
   .container {
@@ -2635,3 +2607,78 @@ textarea::placeholder{
   color: #1b6270;
 }
 
+
+
+
+
+/* Estilos base */
+.ContenedorNombreCategoria {
+  display: flex;
+  align-items: center;
+  margin: 3px;
+  margin-top: 30px;
+}
+
+.infoTarjeta {
+  display: flex;
+}
+
+/* Estilos responsive para pantallas menores o iguales a 768px */
+@media (max-width: 768px) {
+  .place__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ContenedorNombreCategoria {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .infoTarjeta {
+    flex-direction: column;
+  }
+
+  /* Ajustar otros estilos según sea necesario para pantallas pequeñas */
+  .place__content {
+    padding: 10px;
+  }
+
+  .place__price {
+    font-size: 14px;
+  }
+}
+
+/* Estilos para pantallas mayores a 768px (Estilos normales) */
+@media (min-width: 769px) {
+  .place__container {
+    display: flex;
+    flex-wrap: wrap; /* Mantiene el contenido en filas */
+    justify-content: center;
+    align-items: center; 
+  }
+
+  .ContenedorNombreCategoria {
+    flex-direction: row;
+  }
+
+  .infoTarjeta {
+    flex-direction: row;
+  }
+
+  /* Ajustar otros estilos según sea necesario para pantallas grandes */
+  .place__content {
+    /* Estilos normales para pantallas grandes */
+    padding: 20px; /* Ejemplo: aumentar el padding en pantallas grandes */
+    /* Ejemplo: agregar borde en pantallas grandes */
+    width: 100%; /* Ejemplo: ocupar un tercio del ancho del contenedor */
+    margin-bottom: 20px; /* Ejemplo: agregar un espacio entre elementos */
+  }
+
+  .place__price {
+    /* Estilos normales para pantallas grandes */
+    font-size: 18px; /* Ejemplo: aumentar el tamaño del precio en pantallas grandes */
+     /* Ejemplo: cambiar el color del precio en pantallas grandes */
+  }
+}

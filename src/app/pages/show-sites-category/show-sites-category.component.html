@@ -3,7 +3,7 @@
 
     <!--==================== PLACES CARD 1 ====================-->
     <div *ngFor="let cat of sitesCategory">
-        <div style="display: flex;  align-items: center; margin: 3px; margin-top: 30px;">
+        <div class="ContenedorNombreCategoria" >
             <a [routerLink]="['/categoria/' + cat.id]"><h1> {{ cat.name }}  </h1></a>
             <a [routerLink]="['/categoria/' + cat.id]" style="margin-top: 10px; margin-left: 9px; text-decoration: none; color: #11414B; cursor: pointer;;"><i class="fa-solid fa-angles-right"></i></a>
         </div>
@@ -11,7 +11,7 @@
 
         
 
-        <div style="display: flex;" >
+        <div class="infoTarjeta"  >
             <div  class="place__card "  *ngFor="let site of cat.sites">
                 <img src="{{ site.image }}" alt="" class="place__img">
     

@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SendmailService } from 'src/app/services/discover/sendmail.service';
 import Swal from 'sweetalert2';
 
+
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
