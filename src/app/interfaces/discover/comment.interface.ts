@@ -6,4 +6,5 @@ export interface Comment {
     user?: User;
     quality?: string;
     created_at?: string;
+    expanded?: boolean;
 }

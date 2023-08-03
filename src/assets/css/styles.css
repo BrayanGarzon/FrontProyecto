@@ -2623,3 +2623,15 @@ textarea::placeholder{
   }
 }
 
+
+/* Agrega estilos personalizados para el botón "Ver más" */
+.ver-mas {
+  cursor: pointer;
+  color: #11414B;
+  font-weight: bold;
+  
+}
+.ver-mas:hover{
+  color: #1b6270;
+}
+

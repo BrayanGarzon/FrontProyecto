@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Helper } from 'src/app/helper/helper';
@@ -16,6 +16,15 @@ import { SitesService } from 'src/app/services/discover/sites.service';
   styleUrls: ['./showcomments.component.css']
 })
 export class ShowcommentsComponent {
+// Método para expandir o contraer el comentario
+toggleExpand(comment: any) {
+  comment.expanded = !comment.expanded;
+}
+
+// Función para obtener el texto del botón dinámicamente
+getButtonText(comment: any): string {
+  return comment.expanded ? 'Ver menos' : 'Ver más';
+}
   
   private siteId: string | null;
   site: any;
@@ -46,6 +55,11 @@ export class ShowcommentsComponent {
     },
     nav: true
   }
+
+
+
+
+  
 
   constructor(private sitesService: SitesService, private commentsService: CommentsService, private activatedRoute: ActivatedRoute, private router: Router) {
     this.siteId = activatedRoute.snapshot.paramMap.get('site_id');
@@ -96,6 +110,12 @@ export class ShowcommentsComponent {
   getNumberRange(end: any) {
     return Helper.getNumberRange(1, end);
   }
+
+
+
+
 }
+
+
 
 

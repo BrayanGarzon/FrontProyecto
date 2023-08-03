@@ -93,11 +93,24 @@
             </div>
             
             <div class="rating-section">
-                <p><!--Puntuacion:--> <i *ngFor="let item of getNumberRange(comment.quality)" class="ri-star-line place__rating-icon"></i></p>
+                <p><!--Puntuacion:--> 
+                    <i *ngFor="let item of getNumberRange(comment.quality)" class="ri-star-line place__rating-icon"></i>
+                    /5 
+                </p>
             </div>
             
             
-            <p style="margin-top: 10px; text-align: justify;"><!--Mensaje:--> {{ comment.name }}</p>
+            <!-- Mostrar los primeros 150 caracteres del comentario -->
+      <p style="margin-top: 10px; text-align: justify;">
+        {{ comment.name | slice:0:190 }}{{ comment.name.length > 190 ? '...' : '' }}
+        <span *ngIf="comment.name.length > 150" (click)="toggleExpand(comment)" class="ver-mas">{{ comment.expanded ? 'Ver menos' : 'Ver más' }}</span>
+        
+      </p>
+      
+      <!-- Mostrar el comentario completo al hacer clic en "Ver más" -->
+      <p *ngIf="comment.expanded" style="margin-top: 10px; text-align: justify;">
+        {{ comment.name }}
+      </p>
             <small style="margin-top: 10px;"><!--created at:--> {{ comment.created_at | date:"d-M-y hh:mm a"}}</small>
         </div>
     </div>
