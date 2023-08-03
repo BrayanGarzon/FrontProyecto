@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -17,13 +18,15 @@ export class UpdateuserComponent {
     email: '',
     password: '',
     phone:'',
+ 
   };
 
   formRegister: FormGroup = this.fb.group({
     email: [, [Validators.required, Validators.email]],
     name: [, Validators.required],
     password: [, [Validators.required]],
-    phone: [, [Validators.required]]
+    phone: [, [Validators.required]],
+
   })
 
   constructor(private fb: FormBuilder, private authservice: AuthService, private router: Router) {
@@ -35,6 +38,16 @@ export class UpdateuserComponent {
       this.user = resp;
     } )
   }
+
+
+
+
+
+
+
+
+
+
 
   saveRegister() {
     if (!this.formRegister.valid) {

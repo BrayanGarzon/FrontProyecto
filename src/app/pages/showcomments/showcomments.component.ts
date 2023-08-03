@@ -16,6 +16,7 @@ import { SitesService } from 'src/app/services/discover/sites.service';
   styleUrls: ['./showcomments.component.css']
 })
 export class ShowcommentsComponent {
+
 // Método para expandir o contraer el comentario
 toggleExpand(comment: any) {
   comment.expanded = !comment.expanded;

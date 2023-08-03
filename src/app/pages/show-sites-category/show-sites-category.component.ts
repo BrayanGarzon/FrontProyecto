@@ -37,6 +37,8 @@ export class ShowSitesCategoryComponent {
 
   }
 
+ 
+
   getNumberRange(end: any) {
     return Helper.getNumberRange(1, end);
   }

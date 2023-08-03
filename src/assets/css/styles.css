@@ -830,6 +830,9 @@ input {
   padding: .75rem .75rem 1rem;
 }
 
+
+
+
 .place__rating {
   align-self: flex-end;
   display: flex;
@@ -2682,3 +2685,30 @@ textarea::placeholder{
      /* Ejemplo: cambiar el color del precio en pantallas grandes */
   }
 }
+
+
+
+
+
+
+
+.imagenAUNAR {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente la imagen */
+  align-items: center; /* Centra verticalmente la imagen */
+}
+
+.imagenAUNAR img {
+  max-width: 100%; /* La imagen no excederá el ancho del contenedor */
+  height: auto; /* La altura se ajustará automáticamente proporcionalmente */
+}
+
+/* Estilos para pantallas mayores a 768px (Estilos normales) */
+@media (min-width: 769px) {
+  .imagenAUNAR img {
+    max-width: 540px; /* Ajusta el ancho máximo de la imagen en pantallas grandes */
+    height: auto; /* La altura se ajustará automáticamente proporcionalmente */
+  }
+}
+
+
