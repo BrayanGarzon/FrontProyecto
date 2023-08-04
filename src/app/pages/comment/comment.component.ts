@@ -18,8 +18,10 @@ export class CommentComponent {
   formComment: FormGroup = this.fb.group({
     message: [, [Validators.required]],
     quality: [ , [Validators.required, Validators.min(1), Validators.max(5)]]
+    
   })
-
+  
+  
   constructor(private sitesService: SitesService, private commentsService: CommentsService ,private activatedRoute: ActivatedRoute, private fb: FormBuilder, private router: Router) {
     this.siteId = activatedRoute.snapshot.paramMap.get('site_id');
     this.getSite(this.siteId!)

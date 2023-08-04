@@ -832,27 +832,32 @@ input {
 
 
 
-
-.place__rating {
-  align-self: flex-end;
+.rating-section {
+  align-self: flex-star;
   display: flex;
   align-items: center;
 }
 
+.filled-star {
+  color: gold;
+  font-size: 1.9rem;
+  margin-right: var(--mb-0-25);
+}
 
-/*=estilos para las estrellas=*/
-.place__rating-icon {
-  
-  font-size: 1.5rem;
-  margin-right: var(--mb-0-25);
-  
+.filled-star:before {
+  content: "\2605"; /* Carácter Unicode para estrella llena */
 }
-.place__rating-icon:before {
-  content: "\2B50";
-  font-size: 1rem;
+
+.empty-star {
+  color: gold;
+  font-size: 1.9rem;
   margin-right: var(--mb-0-25);
-  
 }
+
+.empty-star:before {
+  content: "\2606"; /* Carácter Unicode para estrella vacía */
+}
+
 .place__rating-number {
   font-size: var(--small-font-size);
 }
@@ -2267,7 +2272,16 @@ textarea::placeholder{
   height: 200px;
   margin-bottom: -25px; /* Agregamos margen inferior para separar del contenidoUsuario */
   z-index: 2;
+  overflow: hidden; /* Asegura que cualquier contenido extra no se muestre fuera del círculo */
 }
+
+.avatarUsuario img {
+  border-radius: 100%;
+  width: 100%; /* Ajusta el tamaño de la imagen al 100% del círculo */
+  height: 100%; /* Ajusta el tamaño de la imagen al 100% del círculo */
+  object-fit: cover; /* Ajusta la imagen para cubrir completamente el área del círculo */
+}
+
 
 .contenidoUsuario {
   background-color: rgb(255, 255, 255);

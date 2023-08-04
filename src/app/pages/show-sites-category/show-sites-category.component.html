@@ -16,9 +16,11 @@
                 <img src="{{ site.image }}" alt="" class="place__img">
     
                 <div class="place__content">
-                    <span class="place__rating">
-                        <i *ngFor="let item of getNumberRange(site.quality)" class="ri-star-line place__rating-icon"></i>
-                    </span>
+                    <p class="place__rating">
+                        <i *ngFor="let _ of getNumberRange(getFilledStars(site.quality))" class="ri-star-line place__rating-icon filled-star"></i>
+      <i *ngFor="let _ of getNumberRange(getEmptyStars(site.quality))" class="ri-star-line place__rating-icon empty-star"></i>
+                    </p>
+                    
     
                     <div class="place__data" >
                         <a [routerLink]="['/discover/comments/show/', site.id]">

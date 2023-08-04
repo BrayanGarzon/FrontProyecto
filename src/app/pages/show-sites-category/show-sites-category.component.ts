@@ -25,8 +25,8 @@ export class ShowSitesCategoryComponent {
         categoriesResponse.forEach( category => {
           
           function compareByQualityDesc(a: Site, b: Site): number {
-            const qualityA = parseInt(a.quality, 10);
-            const qualityB = parseInt(b.quality, 10);
+            const qualityA = parseInt(a.quality.toString(), 10);
+            const qualityB = parseInt(b.quality.toString(), 10);
             return qualityB - qualityA;
           }
          var sites =  data.filter( (site: Site) => site.category.id == category.id ).sort(compareByQualityDesc).slice(0,5)
@@ -37,10 +37,15 @@ export class ShowSitesCategoryComponent {
 
   }
 
- 
-
   getNumberRange(end: any) {
     return Helper.getNumberRange(1, end);
+  }
+
+  getFilledStars(quality: number | undefined): number {
+    return Math.min(Math.max(quality || 0, 0), 5); // Limita el rango de calidad entre 0 y 5
+  }
+  getEmptyStars(quality: number | undefined): number {
+    return 5 - this.getFilledStars(quality);
   }
 
 }

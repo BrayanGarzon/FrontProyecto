@@ -17,14 +17,18 @@ import { SitesService } from 'src/app/services/discover/sites.service';
 })
 export class ShowcommentsComponent {
 
-// Método para expandir o contraer el comentario
-toggleExpand(comment: any) {
-  comment.expanded = !comment.expanded;
-}
+  toggleExpand(comment: any) {
+    comment.expanded = !comment.expanded;
+  }
+  
 
-// Función para obtener el texto del botón dinámicamente
+// Función para obtener el texto del botón dinámicamente content: "\2B50";
 getButtonText(comment: any): string {
   return comment.expanded ? 'Ver menos' : 'Ver más';
+}
+
+calculateMissingStars(quality: number | undefined): number {
+  return 5 - (quality || 0);
 }
   
   private siteId: string | null;

@@ -3,8 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Site } from 'src/app/interfaces/discover/site.interface';
 import { SitesService } from 'src/app/services/discover/sites.service';
 import { Helper } from 'src/app/helper/helper';
-import { CategoriesService } from 'src/app/services/discover';
-import {  SitesCategory } from 'src/app/interfaces/discover/category.interface';
+
 
 @Component({
   selector: 'app-sites',
@@ -12,6 +11,7 @@ import {  SitesCategory } from 'src/app/interfaces/discover/category.interface';
   styleUrls: ['./sites.component.css']
 })
 export class SitesComponent {
+  
 
 
   categoryId: string|null;
@@ -25,9 +25,11 @@ export class SitesComponent {
   getSitesByCategory(categoryId: string){
     this.sitesService.getSitesByCategory(categoryId).subscribe(sites => {
       this.sites = sites;
+      
     })
   }
 
+ 
 
 
   getNumberRange(end: any) {

@@ -1,10 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Helper } from 'src/app/helper/helper';
-import { SitesCategory } from 'src/app/interfaces/discover/category.interface';
 import { Site } from 'src/app/interfaces/discover/site.interface';
-import { CategoriesService } from 'src/app/services/discover/categories.service';
 import { SitesService } from 'src/app/services/discover/sites.service';
+import { Comment } from 'src/app/interfaces/discover/comment.interface';
 
 
 @Component({
@@ -15,6 +14,8 @@ import { SitesService } from 'src/app/services/discover/sites.service';
 export class ShowsitesComponent {
 
   sites: Site[] = [];
+  
+  
 
   public filtro: string = '';
   @Input('category') category: any;

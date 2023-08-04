@@ -1,7 +1,6 @@
 
 
 <section class="place section" style="padding: 1rem 0 2rem;" id="place">
-    <!--<h2 class="section__title" *ngIf="category">{{ category.name }}</h2>-->
     
     <div class="subscribe__input_lupa-container"
         >
@@ -19,6 +18,7 @@
                 <span class="place__rating">
                     <i *ngFor="let item of getNumberRange(site.quality)" class="ri-star-line place__rating-icon"></i>
                 </span>
+                
 
                 <div class="place__data" >
                     <a [routerLink]="['/discover/comments/show/', site.id]">

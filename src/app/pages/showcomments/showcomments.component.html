@@ -9,11 +9,18 @@
         <div class="tituloSite">   
             <h2 class="sineName" style="text-align: center;">{{ site.name }}</h2>
             <li class="calificacionLi">
-                <h2 style="font-size: 15px;" class="calificacion"><strong style="font-size: 20px; text-align: left; padding-right: 5px;"></strong>  <i *ngFor="let item of getNumberRange(site.quality)" class="ri-star-line place__rating-icon"></i>
+                <h2 style="font-size: 15px;" class="calificacion">
+
+                    <i *ngFor="let _ of getNumberRange(site.quality)" class="ri-star-line filled-star"></i>
+                    <i *ngFor="let _ of getNumberRange(calculateMissingStars(site.quality))" class="ri-star-line empty-star"></i>
+                   
                 </h2>
+                
+                
                 
                    
             </li>
+            
         </div>
         <div class="tituloCategoria">
             <h2>{{ site.category.name }}</h2>
@@ -33,14 +40,6 @@
         
         <div class="text" style="text-align: justify; margin-top: 4em;">
             <h4>{{ site.description }}</h4>
-            <!--
-            <li>
-                <h2 style="font-size: 15px;"><strong style="font-size: 18px; text-align: left; padding-right: 5px;">Calificacion:</strong>  <i *ngFor="let item of getNumberRange(site.quality)" class="ri-star-line place__rating-icon"></i>
-                </h2>
-                
-                   
-            </li>
-            -->
             <ul style="margin-top: 2em;">
                 <li>
                     <h2 style="font-size: 15px;"><strong style="font-size: 18px; text-align: left; padding-right: 46px">Precio:</strong> {{ site.price == 0 ? 'Ingreso gratuito' : site.price | currency }}</h2>
@@ -94,22 +93,20 @@
             
             <div class="rating-section">
                 <p><!--Puntuacion:--> 
-                    <i *ngFor="let item of getNumberRange(comment.quality)" class="ri-star-line place__rating-icon"></i>
+                    <i *ngFor="let _ of getNumberRange(comment.quality)" class="ri-star-line filled-star"></i>
+                    <i *ngFor="let _ of getNumberRange(calculateMissingStars(comment.quality))" class="ri-star-line empty-star"></i>
                 </p>
             </div>
             
             
             <!-- Mostrar los primeros 150 caracteres del comentario -->
-      <p style="margin-top: 10px; text-align: justify;">
-        {{ comment.name | slice:0:190 }}{{ comment.name.length > 190 ? '...' : '' }}
-        <span *ngIf="comment.name.length > 150" (click)="toggleExpand(comment)" class="ver-mas">{{ comment.expanded ? 'Ver menos' : 'Ver más' }}</span>
-        
-      </p>
+            <p style="margin-top: 10px; text-align: justify;">
+                {{ comment.expanded ? comment.name : (comment.name | slice:0:180) }}{{ comment.name.length > 180 && !comment.expanded ? '...' : '' }}
+                <span *ngIf="comment.name.length > 180" (click)="toggleExpand(comment)" class="ver-mas">{{ comment.expanded ? 'Ver menos' : 'Ver más' }}</span>
+              </p>
+              
       
-      <!-- Mostrar el comentario completo al hacer clic en "Ver más" -->
-      <p *ngIf="comment.expanded" style="margin-top: 10px; text-align: justify;">
-        {{ comment.name }}
-      </p>
+      
             <small style="margin-top: 10px;"><!--created at:--> {{ comment.created_at | date:"d-M-y hh:mm a"}}</small>
         </div>
     </div>

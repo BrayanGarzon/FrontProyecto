@@ -44,4 +44,14 @@ export class ShowSitesByCategoryComponent {
     this.filtro = "";
   }
 
+  getFilledStars(quality: number | undefined): number {
+    const qualityNumber = parseInt(!!quality ? quality.toString() : '0', 10); // Convierte a número, si es nulo, será 0
+    return Math.min(Math.max(qualityNumber, 0), 5);
+  }
+  
+  
+  getEmptyStars(quality: number | undefined): number {
+    return 5 - this.getFilledStars(quality);
+  }
+
 }

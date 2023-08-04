@@ -5,8 +5,9 @@ export interface Site {
     name:     string;
     url:      string;
     location: string;
-    quality:  string;
+    quality:  number;
     category: Category;
     image:    string;
     price:    number;
+    
 }
