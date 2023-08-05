@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Helper } from 'src/app/helper/helper';
 import { Site } from 'src/app/interfaces/discover/site.interface';
 import { SitesService } from 'src/app/services/discover/sites.service';
-import { Comment } from 'src/app/interfaces/discover/comment.interface';
+
 
 
 @Component({

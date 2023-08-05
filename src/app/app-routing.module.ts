@@ -24,6 +24,7 @@ const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "discover", component: DiscoverComponent },
   { path: "categoria/:id", component: ShowSitesByCategoryComponent },
+  
 
   { path: "infoUserComment", component: InfoUserCommentComponent },
   // { path: "discover/sites", component: ShowsitesComponent },

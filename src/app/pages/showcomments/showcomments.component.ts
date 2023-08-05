@@ -5,7 +5,7 @@ import { Helper } from 'src/app/helper/helper';
 import { Comment } from 'src/app/interfaces/discover/comment.interface';
 import { CommentsService } from 'src/app/services/discover/comments.service';
 import { SitesService } from 'src/app/services/discover/sites.service';
-
+import { User } from 'src/app/interfaces/discover/user.interface';
 
 
 
@@ -97,6 +97,7 @@ calculateMissingStars(quality: number | undefined): number {
     })
   }
   
+
 
 
   initCommentCount() {
