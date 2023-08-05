@@ -54,6 +54,7 @@ export class UpdateuserComponent {
       this.formRegister.markAllAsTouched();
       return;
     }
+    
     this.authservice.updateRegister(this.formRegister.value).subscribe(response => {
       localStorage.clear();
       this.router.navigateByUrl('/login').then(() => {

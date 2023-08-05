@@ -88,7 +88,28 @@
                 <div class="avatar">
                     <img src="{{ comment.user?.avatar }}" alt="Avatar">
                 </div>
-                <h4><!--Usuario:--> {{ comment.user?.name || 'Usuario desconocido' }}</h4>
+                <!-- Agregar eventos (mouseover) y (mouseout) en el h4 -->
+                <h4 (mouseover)="toggleDivFlotante(comment, true)" (mouseout)="toggleDivFlotante(comment, false)" class="nombreUserComent">
+                    <a [routerLink]="['/infoUserComment']" class="nameUserComent">{{ comment.user?.name || 'Usuario desconocido' }}</a>
+                </h4>
+                
+                    <!-- Mostrar el div flotante solo si 'showDivFlotante' es verdadero -->
+                <div class="divFlotante" *ngIf="comment.showDivFlotante">
+                        
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <img src="{{ comment.user?.avatar }}" alt="Avatar">
+                        
+                        {{ comment.user?.name || 'Usuario desconocido' }}
+                        
+                    </div>
+                        
+                    <br>
+                    {{comment.user?.email}} <br>
+                     Aportes: {{ comment.commentCount || 0 }}
+            
+            
+            
+                 </div>
             </div>
             
             <div class="rating-section">

@@ -10,12 +10,14 @@ import { RegisterComponent } from './pages/register/register.component';
 import { CommentComponent } from './pages/comment/comment.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ShowcommentsComponent } from './pages/showcomments/showcomments.component';
-import { ShowsitesComponent } from './pages/showsites/showsites.component';
+
 import { UpdateuserComponent } from './pages/updateuser/updateuser.component';
 
 import { CreditosComponent } from './pages/creditos/creditos.component';
 import { InfoPerfilUsuarioComponent } from './pages/info-perfil-usuario/info-perfil-usuario.component';
 import { ShowSitesByCategoryComponent } from './pages/show-sites-by-category/show-sites-by-category.component';
+
+import { InfoUserCommentComponent } from './pages/info-user-comment/info-user-comment.component';
 
 const routes: Routes = [
   // { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -23,6 +25,7 @@ const routes: Routes = [
   { path: "discover", component: DiscoverComponent },
   { path: "categoria/:id", component: ShowSitesByCategoryComponent },
 
+  { path: "infoUserComment", component: InfoUserCommentComponent },
   // { path: "discover/sites", component: ShowsitesComponent },
   // { path: "discover/sites/:category_id", component: SitesComponent },
   { path: "discover/comments/show/:site_id", component: ShowcommentsComponent },
@@ -34,6 +37,7 @@ const routes: Routes = [
   { path: "creditos", component: CreditosComponent },
   { path: "infoPerfilUsuario", component: InfoPerfilUsuarioComponent},
   { path: "**", component: Error404Component },
+
 ];
 
 @NgModule({

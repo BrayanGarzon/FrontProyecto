@@ -22,6 +22,8 @@ export class ShowcommentsComponent {
   }
   
 
+
+
 // Función para obtener el texto del botón dinámicamente content: "\2B50";
 getButtonText(comment: any): string {
   return comment.expanded ? 'Ver menos' : 'Ver más';
@@ -78,13 +80,57 @@ calculateMissingStars(quality: number | undefined): number {
       
     })
   }
+  // Método para inicializar la propiedad 'showDivFlotante' después de obtener los comentarios
+  initializeComments(comments: Comment[]) {
+    comments.forEach(comment => {
+      comment.showDivFlotante = false;
+    });
+  }
 
   getCommentsBySite(siteId: string) {
     this.commentsService.getCommentsBySite(siteId).subscribe((response: Comment[]) => {
 
       this.comments = response;
+      this.initializeComments(this.comments); // Llamamos al método para inicializar showDivFlotante
+      this.initCommentCount();
 
     })
+  }
+  
+
+
+  initCommentCount() {
+    // Objeto para almacenar el contador de comentarios por usuario
+    const commentCountMap: { [email: string]: number } = {};
+
+    // Recorrer los comentarios para contar la cantidad de comentarios por usuario
+    this.comments.forEach(comment => {
+      if (comment.user?.email) {
+        if (commentCountMap[comment.user.email]) {
+          commentCountMap[comment.user.email]++;
+        } else {
+          commentCountMap[comment.user.email] = 1;
+        }
+      }
+    });
+
+    // Asignar el contador de comentarios al comentario correspondiente
+    this.comments.forEach(comment => {
+      comment.commentCount = commentCountMap[comment.user?.email || ''] || 0;
+    });
+  }
+
+
+
+
+
+
+
+
+
+  // Mostrar u ocultar el div flotante cuando el cursor pasa sobre el h4
+  toggleDivFlotante(comment: Comment, show: boolean): void {
+    comment.showDivFlotante = show;
   }
 
   getClass(key: string): string {
@@ -115,6 +161,8 @@ calculateMissingStars(quality: number | undefined): number {
   getNumberRange(end: any) {
     return Helper.getNumberRange(1, end);
   }
+
+  
 
 
 

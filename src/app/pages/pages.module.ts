@@ -22,6 +22,7 @@ import { CreditosComponent } from './creditos/creditos.component';
 import { InfoPerfilUsuarioComponent } from './info-perfil-usuario/info-perfil-usuario.component';
 import { ShowSitesCategoryComponent } from './show-sites-category/show-sites-category.component';
 import { ShowSitesByCategoryComponent } from './show-sites-by-category/show-sites-by-category.component';
+import { InfoUserCommentComponent } from './info-user-comment/info-user-comment.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { ShowSitesByCategoryComponent } from './show-sites-by-category/show-site
     InfoPerfilUsuarioComponent,
     ShowSitesCategoryComponent,
     ShowSitesByCategoryComponent,
+    InfoUserCommentComponent,
   ],
   imports: [
     CommonModule,

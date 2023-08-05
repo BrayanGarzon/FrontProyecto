@@ -2726,3 +2726,57 @@ textarea::placeholder{
 }
 
 
+
+
+
+
+
+
+
+.divFlotante {
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  /* Ajusta los estilos del div flotante según tus necesidades */
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1;
+  right: 1050px; /* Mueve el div flotante 10 píxeles hacia la derecha */
+}
+
+
+
+/* Estilos para resaltar el cursor al pasar sobre el h4 */
+.nombreUserComent:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Media Query para pantallas con ancho menor a 1700px */
+@media screen and (max-width: 1700px) {
+  .divFlotante {
+    right: auto; /* Reinicia la posición derecha */
+    left: 550px; /* Ajusta la posición izquierda */
+  }
+  .nombreUserComent:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+/* Media Query para pantallas de teléfono con ancho menor a 768px */
+@media screen and (max-width: 768px) {
+  .divFlotante {
+    right: auto;
+    left: 190px; /* Ajusta la posición izquierda */
+    
+  }
+}
+
+
+.nameUserComent{
+  text-decoration: none;
+  color: #11414B;
+  cursor: pointer;
+}
