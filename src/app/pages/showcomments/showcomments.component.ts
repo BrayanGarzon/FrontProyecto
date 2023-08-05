@@ -110,7 +110,7 @@ calculateMissingStars(quality: number | undefined): number {
           commentCountMap[comment.user.email]++;
         } else {
           commentCountMap[comment.user.email] = 1;
-        }
+        }   
       }
     });
 

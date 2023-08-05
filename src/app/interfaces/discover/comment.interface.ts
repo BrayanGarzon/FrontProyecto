@@ -9,4 +9,5 @@ export interface Comment {
     expanded?: boolean;
     showDivFlotante?: boolean; // El '?' indica que la propiedad es opcional
     commentCount?: number; // Agrega la propiedad para el contador de comentarios
+    siteCount?: number;
 }
