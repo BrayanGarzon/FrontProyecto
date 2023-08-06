@@ -2419,6 +2419,7 @@ textarea::placeholder{
   justify-content: center;
   position: relative;
   
+  
 }
 .contenedorCreditos .contenedorFrameworksBack .frameworksBack {
   /* ... Tus estilos existentes ... */
@@ -2432,6 +2433,7 @@ textarea::placeholder{
   height: auto;
   overflow: hidden;
   transition: transform 0.3s ease;
+  
 }
 /* Pseudo-clase :hover para aplicar la animación al pasar el cursor sobre el div */
 .contenedorCreditos .contenedorFrameworksBack .frameworksBack:hover {
@@ -2634,10 +2636,13 @@ textarea::placeholder{
   align-items: center;
   margin: 3px;
   margin-top: 30px;
+  
 }
 
 .infoTarjeta {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Estilos responsive para pantallas menores o iguales a 768px */
@@ -2678,6 +2683,7 @@ textarea::placeholder{
 
   .ContenedorNombreCategoria {
     flex-direction: row;
+    margin-left: 50px;
   }
 
   .infoTarjeta {
