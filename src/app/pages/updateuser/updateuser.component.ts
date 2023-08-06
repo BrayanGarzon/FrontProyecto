@@ -17,8 +17,8 @@ export class UpdateuserComponent {
     name: '',
     email: '',
     password: '',
-    phone:'',
- 
+    phone: '',
+    id: 0
   };
 
   formRegister: FormGroup = this.fb.group({

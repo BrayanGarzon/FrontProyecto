@@ -90,7 +90,7 @@
                 </div>
                 <!-- Agregar eventos (mouseover) y (mouseout) en el h4 -->
                 <h4 (mouseover)="toggleDivFlotante(comment, true)" (mouseout)="toggleDivFlotante(comment, false)" class="nombreUserComent">
-                    <a [routerLink]="['/infoUserComment']" class="nameUserComent">{{ comment.user?.name || 'Usuario desconocido' }}</a>
+                    <a [routerLink]="['/infoUserComment']" [queryParams]="{user: comment.user?.id}" class="nameUserComent">{{ comment.user?.name || 'Usuario desconocido' }}</a>
                 </h4>
                 
                 

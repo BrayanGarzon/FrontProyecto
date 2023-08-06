@@ -29,6 +29,7 @@ export class RegisterComponent {
 
   selectedFile!: File;
   formData: User = {
+    id: 0,
     name: '',
     email: '',
     password: '',

@@ -24,6 +24,18 @@
       
       return this.http.get<User>(`${API_URL}/users/me/` , httpHeader);
     }
+
+    getUserById(id:number): Observable<User> {
+      var token = localStorage.getItem('token');
+      const httpHeader = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': `Token ${token}`
+        })
+      }
+      
+      return this.http.get<User>(`${API_URL}/users/me/${id}` , httpHeader);
+    }
     
     
   }

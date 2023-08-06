@@ -1,19 +1,15 @@
-
-
-
-
-
-
 <div class="contenUserComment" style="margin-top: 200px; margin-bottom: 200px;">
-    
+
     <div class="infoUserComment">
-         <h1>Info User</h1>
-         <!--
-            avatar {user.avatar}
-            avatar {user.email}
-            avatar {user.nationality}
-            avatar {user.phone}
-         -->
+        <div style=" display: flex; flex-direction: column; justify-content: start; align-items: center; ">
+            <img width="50%" [src]="user?.avatar" alt="avatar del usuario">
+            <h2>{{ user?.name }}</h2>
+            <h2>{{ user?.email }}</h2>
+            <h2>{{ user?.nationality }}</h2>
+            <h2>{{ user?.gender }}</h2>
+        </div>
+
+
     </div>
 
 
@@ -21,23 +17,11 @@
 
     <div class="infoUserSitesComments">
         <h1>Info User Sites Comment</h1>
-        <div class="sitesComment">
-            <h3>sites anh comments</h3>
-            
-            <!--
-            avatar {user.comment.site}
-            <a href="">avatar {user.site.name}</a>
-            
-            avatar {user.comment.quality}
-         -->
+        <div class="sitesComment" *ngFor="let site of sites">
+           {{ site.name }}
+
         </div>
     </div>
-    
-    
+
+
 </div>
-
-
-
-
-
-

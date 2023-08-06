@@ -26,4 +26,11 @@ export class CommentsService {
     return this.http.get<any>(`${API_URL}/register/comments/${siteId}/list/`);
   }
 
+  getCommentsById(id: number){
+    return this.http.get<Comment>(`${API_URL}/users/comment/${id}`);
+  }
+  getCommentsByUserId(id: number){
+    return this.http.get<Comment>(`${API_URL}/users/comments/${id}`);
+  }
+
 }
