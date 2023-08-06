@@ -14,13 +14,13 @@
 
 <div class="aportesUser">
     <h2 class="h2aportesUser">Calificaciones y comentarios</h2>
-
+    
     
     <div class="sitesComment" *ngFor="let site of sites">
         <div>
-            <div *ngFor="let site of sites">
-                <h3>{{ site.site.name }}</h3>
-            </div>
+            
+            <h3>{{ site.site.name }}</h3>
+            
             <i *ngFor="let _ of getNumberRange(site.quality)" class="ri-star-line filled-star"></i>
             <i *ngFor="let _ of getNumberRange(calculateMissingStars(site.quality))" class="ri-star-line empty-star"></i><br>
         </div>
@@ -29,8 +29,9 @@
         {{ site.name }}
         
        
-
+        
     </div>
+    
     
 </div>
 
