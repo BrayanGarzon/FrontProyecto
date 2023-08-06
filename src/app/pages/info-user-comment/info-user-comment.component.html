@@ -1,27 +1,47 @@
-<div class="contenUserComment" style="margin-top: 200px; margin-bottom: 200px;">
-
-    <div class="infoUserComment">
-        <div style=" display: flex; flex-direction: column; justify-content: start; align-items: center; ">
-            <img width="50%" [src]="user?.avatar" alt="avatar del usuario">
-            <h2>{{ user?.name }}</h2>
-            <h2>{{ user?.email }}</h2>
-            <h2>{{ user?.nationality }}</h2>
-            <h2>{{ user?.gender }}</h2>
-        </div>
-
-
+<div class="contenedorInfoUsuarioComponent" style="margin-top: 150px; ">
+    <div class="avatarUserInfo">
+        <img [src]="user?.avatar" alt="avatar del usuario" class="avattarUserInfo">
     </div>
-
-
-
-
-    <div class="infoUserSitesComments">
-        <h1>Info User Sites Comment</h1>
-        <div class="sitesComment" *ngFor="let site of sites">
-           {{ site.name }}
-
-        </div>
+    <div class="infoPersonalUser1">
+        <h2>{{ user?.name }}</h2>
+        <h2>{{ user?.gender }}</h2>
     </div>
-
-
+    <div class="infoPersonalUser2">
+        <h2>{{ user?.email }}</h2>
+        <h2>{{ user?.nationality }}</h2>
+    </div>
 </div>
+
+<div class="aportesUser">
+    <h2 class="h2aportesUser">Calificaciones y comentarios</h2>
+
+    
+    <div class="sitesComment" *ngFor="let site of sites">
+        <div>
+            <div *ngFor="let site of sites">
+                <h3>{{ site.site.name }}</h3>
+            </div>
+            <i *ngFor="let _ of getNumberRange(site.quality)" class="ri-star-line filled-star"></i>
+            <i *ngFor="let _ of getNumberRange(calculateMissingStars(site.quality))" class="ri-star-line empty-star"></i><br>
+        </div>
+        
+        
+        {{ site.name }}
+        
+       
+
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
