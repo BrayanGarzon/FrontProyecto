@@ -89,12 +89,10 @@ calculateMissingStars(quality: number | undefined): number {
 
   getCommentsBySite(siteId: string) {
     this.commentsService.getCommentsBySite(siteId).subscribe((response: Comment[]) => {
-
       this.comments = response;
-      this.initializeComments(this.comments); // Llamamos al método para inicializar showDivFlotante
+      this.initializeComments(this.comments);
       this.initCommentCount();
-
-    })
+    });
   }
   
 
@@ -114,6 +112,7 @@ calculateMissingStars(quality: number | undefined): number {
         }   
       }
     });
+    console.log(commentCountMap);
 
     // Asignar el contador de comentarios al comentario correspondiente
     this.comments.forEach(comment => {
