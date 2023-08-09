@@ -21,16 +21,19 @@ export class UpdateuserComponent {
     id: 0
   };
 
-  formRegister: FormGroup = this.fb.group({
-    email: [, [Validators.required, Validators.email]],
-    name: [, Validators.required],
-    password: [, [Validators.required]],
-    phone: [, [Validators.required]],
+  formRegister: FormGroup;
+  selectedFile!: File;
 
-  })
 
   constructor(private fb: FormBuilder, private authservice: AuthService, private router: Router) {
     this.getMe()
+    this.formRegister = this.fb.group({
+      email: [, [Validators.required, Validators.email]],
+      name: [, Validators.required],
+      password: [, [Validators.required]],
+      phone: [, [Validators.required]],
+      avatar: null
+  });
   }
 
   getMe() {
@@ -46,16 +49,34 @@ export class UpdateuserComponent {
 
 
 
+  onFileSelected(event: any) {
+    this.selectedFile = event.target.files[0];
+    this.formRegister.get('avatar')?.setValue(this.selectedFile);
+  }
 
 
 
   saveRegister() {
+    const formData = new FormData();
+
     if (!this.formRegister.valid) {
       this.formRegister.markAllAsTouched();
       return;
     }
+
+    formData.append('name', this.formRegister.get('name')!.value);
+    formData.append('email', this.formRegister.get('email')!.value);
+
+    formData.append('avatar', this.formRegister.get('avatar')!.value);
+
+    formData.append('phone', this.formRegister.get('phone')!.value);
+    formData.append('password', this.formRegister.get('password')!.value);
+
+    console.log( { formData})
+
+
     
-    this.authservice.updateRegister(this.formRegister.value).subscribe(response => {
+    this.authservice.updateRegister(formData).subscribe(response => {
       localStorage.clear();
       this.router.navigateByUrl('/login').then(() => {
         // Recarga la página

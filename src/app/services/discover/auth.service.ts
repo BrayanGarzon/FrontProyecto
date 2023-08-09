@@ -25,16 +25,14 @@ export class AuthService {
     return this.http.post<any>(`${API_URL}/users/users/`, user, { headers });
   }
 
-  updateRegister(user: User): Observable<any> {
+  updateRegister(data: FormData): Observable<any> {
     var token = localStorage.getItem('token');
     var userId = localStorage.getItem('user_id');
-    const httpHeader = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': `Token ${token}`
-      })
-    }
-    return this.http.put<any>(`${API_URL}/users/users/${userId}/`, user, httpHeader);
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Authorization', `Token ${token}`)
+    
+    return this.http.put<any>(`${API_URL}/users/users/${userId}/`, data, {headers});
   }
 
   authLogin(auth: Auth): Observable<any> {

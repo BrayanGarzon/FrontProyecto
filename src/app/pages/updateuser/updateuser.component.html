@@ -46,12 +46,12 @@
         <div class="contenidoUpdateuser">
             
             <form id="formulario" (ngSubmit)="saveRegister()" [formGroup]="formRegister" class="formUpdateUser"
-                method="POST">
+                method="POST" enctype="multipart/form-data">
 
                 <label style="margin-left: 5px; color: #787f8a;">
                     Imagen de perfil
                </label>
-               <input  type="file" class="inputFormularioRegistro" name="avatar" id="avatar" accept="image/png, image/gif, image/jpeg"  required>
+               <input  type="file" class="inputFormularioRegistro"  name="avatar" id="avatar" (change)="onFileSelected($event)" accept="image/png, image/gif, image/jpeg"  required>
 
                 <input type="text" placeholder="Nombres" formControlName="name" [(ngModel)]="user.name" class="updateaUser__input" name="name"
                     id="name" required>
