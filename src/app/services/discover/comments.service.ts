@@ -13,11 +13,15 @@ export class CommentsService {
 
   saveComment(comment: Comment): Observable<any> {
     var token = localStorage.getItem('token');
+    console.log(token);
     const httpHeader = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Token ${token}`
+        
+        
       })
+      
     }
     return this.http.post<any>(`${API_URL}/register/comments/`, comment, httpHeader);
   }

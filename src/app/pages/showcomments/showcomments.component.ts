@@ -99,27 +99,23 @@ calculateMissingStars(quality: number | undefined): number {
 
 
   initCommentCount() {
-    // Objeto para almacenar el contador de comentarios por usuario
     const commentCountMap: { [email: string]: number } = {};
-
-    // Recorrer los comentarios para contar la cantidad de comentarios por usuario
+  
     this.comments.forEach(comment => {
       if (comment.user?.email) {
         if (commentCountMap[comment.user.email]) {
           commentCountMap[comment.user.email]++;
         } else {
           commentCountMap[comment.user.email] = 1;
-        }   
+        }
       }
     });
-    console.log(commentCountMap);
-
-    // Asignar el contador de comentarios al comentario correspondiente
+  
     this.comments.forEach(comment => {
       comment.commentCount = commentCountMap[comment.user?.email || ''] || 0;
     });
   }
-
+  
 
 
 

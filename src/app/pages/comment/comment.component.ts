@@ -40,7 +40,7 @@ export class CommentComponent {
     }
     var comment: Comment = {
       name: this.formComment.controls['message'].value,
-      site: this.site,
+      site: this.site.id,
       quality: this.formComment.controls['quality'].value,
     }
     this.commentsService.saveComment(comment).subscribe(respponse => {
