@@ -2695,7 +2695,7 @@ textarea::placeholder{
     flex: 1; /* El contenedor ocupará el espacio disponible */
     display: flex;
     align-items: center;
-    margin-left: 50px;
+    
   }
 
   .infoTarjeta {
@@ -2728,6 +2728,7 @@ textarea::placeholder{
 .place__container {
   /*display: grid;
   grid-template-columns: 1fr;  Esto asegura una columna en pantallas pequeñas */
+  justify-content: center;
   grid-gap: 10px; /* Espaciado entre las imágenes */
 }
 
